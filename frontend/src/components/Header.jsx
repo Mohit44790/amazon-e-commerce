@@ -25,22 +25,22 @@ const Header = () => {
         </div></Link> 
 
         <Link to={"/miniTv"}> <div className="min-w-fit ">MX Player</div></Link>
-        <div className="min-w-fit">Sell</div>
-        <div className="min-w-fit">Best Sellers</div>
-        <div className="min-w-fit">Mobiles</div>
-        <div className="min-w-fit">Today's Deals</div>
+       <Link to={"/sell"}>  <div className="min-w-fit">Sell</div></Link> 
+       <Link to={"/bestsellers"}>  <div className="min-w-fit">Best Sellers</div></Link> 
+       <Link to={"/mobiles/smartphones"}>  <div className="min-w-fit">Mobiles</div></Link> 
+       <Link to={"/todayDeal"}>  <div className="min-w-fit">Today's Deals</div></Link> 
 
-        <div className="flex items-center gap-1 min-w-fit">
+       <Link to={"/miniTv"}>  <div className="flex items-center gap-1 min-w-fit">
           Prime <IoIosArrowDown />
-        </div>
+        </div></Link> 
 
-        <div className="min-w-fit">Customer Service</div>
-        <div className="min-w-fit">New Releases</div>
-        <div className="min-w-fit">Electronics</div>
+        <Link to={"/customer"}> <div className="min-w-fit">Customer Service</div></Link> 
+        <Link to={"/newRelease"}> <div className="min-w-fit">New Releases</div></Link> 
+        <Link to={"/electronics"}> <div className="min-w-fit">Electronics</div></Link> 
        <Link to={"/fashion"}><div className="min-w-fit">Fashion</div></Link> 
-        <div className="min-w-fit">Amazon Pay</div>
-        <div className="min-w-fit">Home & Kitchen</div>
-        <div className="min-w-fit">Computers</div>
+        <Link to={"/amazonpay"}> <div className="min-w-fit">Amazon Pay</div></Link> 
+        <Link to={"/home-kitchen"}> <div className="min-w-fit">Home & Kitchen</div></Link> 
+        <Link to={"/computer"}> <div className="min-w-fit">Computers</div></Link> 
       </div>
     </div>
     

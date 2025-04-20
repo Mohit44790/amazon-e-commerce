@@ -316,7 +316,48 @@ export const mockProducts = [
         'red', 'green', 'pink', 'blue', 'orange', 'purple',
         'white', 'yellow', 'black',
       ];
-
+export const fashionCategories = [
+          {
+            label: "Men Clothings",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/mens/mens-1._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Women Clothings",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/womens._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Kids Clothings",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/kids._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Footwears",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/footwear._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Luggage & Bags",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/luggage__bags._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Jewellery",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/jewellery._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Watches",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/watches._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Beauty",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/beauty._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "handBags",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/handbags._SS300_QL85_FMpng_.png",
+          },
+          {
+            label: "Sungalles & Frames",
+            img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/3.0/Halos/eyewear._SS300_QL85_FMpng_.png",
+          },
+        ];
       export const fashionBanner = [
         {
           id: 1,
@@ -336,3 +377,113 @@ export const mockProducts = [
         },
        
       ];
+
+      export const fashionBanner2 = [
+        {
+          id: 5,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/Serve_steals_incremental._CB796094139_.jpg"
+        },
+        {
+          id: 6,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/Mar25/Incremental/PC/PRIME._CB547939974_.jpg"
+        },
+        {
+          id: 7,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/Mar25/Incremental/PC/deals._CB547939974_.jpg"
+        },
+        {
+          id: 8,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/Mar25/Incremental/PC/Coupons._CB547939974_.jpg"
+        },
+        {
+          id: 9,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/Mar25/Incremental/PC/clearance_store1._CB547938936_.jpg"
+        },
+       
+      ];
+      export const fashionBanner3 = [
+        {
+          id: 10,
+          url: "https://m.media-amazon.com/images/G/31/img25/Fashion/AF/GenZsale/Hiddengems/Smart_Clothing_For_Men_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 11,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/Tophero/V1/V2/New-Age_Make_Up_copy_1._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 12,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/HiddenGems/Travel_Essentials_copy_1_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 13,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/HiddenGems/Dazzling_Jewellery_copy_1_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 14,
+          url: "https://m.media-amazon.com/images/G/31/img25/Fashion/AF/GenZsale/Hiddengems/Stylish_Handbags_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 15,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/HiddenGems/Snazzy_Western_Wea_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 16,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/HiddenGems/Sandls_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 17,
+          url: "https://m.media-amazon.com/images/G/31/img25/Fashion/AF/GenZsale/Hiddengems/Timeless_Watches_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 18,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/HiddenGems/Trendy_Footwear_copy_1_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 19,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/Event/GenZsale/April25/Tophero/V1/V2/Beauty._SS400_QL85_FMpng_.png"
+        },
+       
+      ];
+      export const fashionBanner4 = [
+        {
+          id: 20,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/SPB_1500x400._CB544017564_.jpg"
+        },
+        {
+          id: 21,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/Womens_apparel_1500x400._CB544017564_.jpg"
+        },
+        {
+          id: 22,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/Apparel_1500x400._CB544017564_.jpg"
+        },
+        {
+          id: 23,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/Beauty_1500x400_1._CB544017564_.jpg"
+        },
+        {
+          id: 24,
+          url: "https://m.media-amazon.com/images/G/31/img25/Fashion/AF/GenZsale/Hiddengems/Stylish_Handbags_558x810._SS400_QL85_FMpng_.png"
+        },
+        {
+          id: 25,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/Shoes_1500x400._CB544017564_.jpg"
+        },
+        {
+          id: 26,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/Watches_1500x400._CB544017564_.jpg"
+        },
+        {
+          id: 27,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/Jewellery_1500x400._CB544017564_.jpg"
+        },
+        {
+          id: 28,
+          url: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/Luggage_1500x400._CB544017564_.jpg"
+        },
+        
+       
+      ];
+
+
+      

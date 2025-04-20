@@ -17,6 +17,9 @@ import WomensClothing from "./pages/WomensClothing"
 import SignIn from "./pages/SignIn"
 import Fresh from "./pages/Fresh"
 import Fashion from "./pages/Fashion"
+import Sell from "./pages/Sell"
+import TodayDeal from "./pages/TodayDeal"
+import CustomerService from "./pages/CustomerService"
 
 
 
@@ -42,6 +45,9 @@ function App() {
         { path:"/allAccessories", element:<ClothingAnd_Accessories />},
         { path:"/fresh", element:<Fresh />},
         { path:"/fashion", element:<Fashion />},
+        { path:"/sell", element:<Sell />},
+        { path:"/todayDeal", element:<TodayDeal />},
+        { path:"/customer", element:<CustomerService />},
        
         { path: "/fresh", element: <Fresh />,}
         
