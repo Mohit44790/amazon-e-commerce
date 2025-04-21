@@ -20,6 +20,8 @@ import Fashion from "./pages/Fashion"
 import Sell from "./pages/Sell"
 import TodayDeal from "./pages/TodayDeal"
 import CustomerService from "./pages/CustomerService"
+import HomeAndKitchen from "./pages/HomeAndKitchen"
+import Computers from "./pages/Computers"
 
 
 
@@ -48,6 +50,8 @@ function App() {
         { path:"/sell", element:<Sell />},
         { path:"/todayDeal", element:<TodayDeal />},
         { path:"/customer", element:<CustomerService />},
+        { path:"/home-kitchen", element:<HomeAndKitchen />},
+        { path:"/computer", element:<Computers />},
        
         { path: "/fresh", element: <Fresh />,}
         

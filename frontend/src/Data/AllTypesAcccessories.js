@@ -485,5 +485,129 @@ export const fashionCategories = [
        
       ];
 
+ export const homeAndKitchen =[
+
+  {
+    id:29,
+    label: "Bedding &decor",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/HnD._SS300_QL85_.jpg",
+  },
+  {
+    id:30,
+    label: "Appliances",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/SA._SS300_QL85_.jpg",
+  },
+  {
+    id:31,
+    label: "Fitness",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/Sports._SS300_QL85_.jpg",
+  },
+  {
+    id:32,
+    label: "Automotive Products",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/Auto._SS300_QL85_.jpg",
+  },
+  {
+    id:33,
+    label: "Kitechen Ware",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/Cookware._SS300_QL85_.jpg",
+  },
+  {
+    id:34,
+    label: "Home Improvement",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/HI._SS300_QL85_.jpg",
+  },
+  {
+    id:35,
+    label: "Home essentials",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Rec/Home_essential._SS300_QL85_.jpg",
+  },
+  {
+    id:36,
+    label: "Outdoors",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/LnG._SS300_QL85_.jpg",
+  },
+  {
+    id:37,
+    label: "furniture",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Unrec/Furni._SS300_QL85_.jpg",
+  },
+  {
+    id:38,
+    label: "Amazon Brans",
+    img: "https://m.media-amazon.com/images/G/31/img21/OHL/Halo/NOcallouts/Rec/PB._SS300_QL85_.jpg",
+  },
+
+ ]
+ export const homeBanner =[
+
+  {
+    id:39,
+    
+    img: "https://m.media-amazon.com/images/G/31/img18/HomeImprovement/harsmisc/2025/April/Alton_HnK_PC_hero-slider_Apr_25._SX3000_QL85_.jpg",
+  },
+  {
+    id:40,
+    
+    img: "https://m.media-amazon.com/images/G/31/2025/LawnGarden/Swati/Header/9cvday/Heroslide_FebVday/Pc_Outdoor_Summer_essentials._SX3000_QL85_FMpng_.png",
+  },
+  {
+    id:41,
+   
+    img: "https://m.media-amazon.com/images/G/31/2025/Auto/HARSH/MOBHEROSLIDERAPRILHNK/PC_hero-slider-Riding-gears--more._SX3000_QL85_FMpng_.png",
+  },
+  {
+    id:42,
+   
+    img: "https://m.media-amazon.com/images/G/31/2025/LawnGarden/Swati/Header/9cvday/Heroslide_FebVday/Pc_Outdoor_Summer_essentials._SX3000_QL85_FMpng_.png",
+  },
+  {
+    id:43,
+    
+    img: "https://m.media-amazon.com/images/G/31/CookwareDining/tdhruvko/BrandDays/Vguard/April/5299-HI---HNK-SG-update---April_PC_Hnk._SX3000_QL85_FMpng_.png",
+  },
+  {
+    id:44,
+    
+    img: "https://m.media-amazon.com/images/G/31/home/2025/April/hnk/heroslider/PC/Hero_Slider_-_PC_-_Power_cut._SX3000_QL85_FMpng_.png",
+  },
+ 
+
+ ]
+ export const computer =[
+
+  {
+    id:45,
+    
+    img: "https://m.media-amazon.com/images/G/31/img22/pcacc/bau/GAME_1._CB546717422_UC686,360_.png",
+  },
+  {
+    id:46,
+    
+    img: "https://m.media-amazon.com/images/I/41T0aGcoieL._SR480,440_.jpg",
+  },
+  {
+    id:47,
+   
+    img: "https://m.media-amazon.com/images/I/41hYQ9J7gCL._SR480,440_.jpg",
+  },
+  {
+    id:48,
+   
+    img: "https://m.media-amazon.com/images/I/41GMgZG6zdL._SR480,440_.jpg",
+  },
+  {
+    id:49,
+    
+    img: "https://m.media-amazon.com/images/I/31RYQTatwkL._SR480,440_.jpg",
+  },
+  {
+    id:50,
+    
+    img: "https://m.media-amazon.com/images/I/31yYF0YxWsL._SR480,440_.jpg",
+  },
+ 
+
+ ]
 
       
