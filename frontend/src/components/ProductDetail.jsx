@@ -6,9 +6,7 @@ import { fetchProductById } from '../redux/slice/productSlice';
 import { addToCart } from '../redux/slice/cartSlice';
 import { toast } from 'react-toastify';
 import ProductReviews from './ProductReviews';
-// import ReactImageMagnify from 'react-image-magnify';
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
+import ReactImageMagnify from 'react-image-magnify';
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -95,16 +93,8 @@ const ProductDetail = () => {
               className="w-96 h-full object-cover border rounded"
             />
           </div> */}
-          <Zoom>
-    <img
-      src={selectedImage || product?.images?.[0]}
-      onError={(e) => (e.target.src = '/placeholder.jpg')}
-      alt="Selected"
-      className="w-full h-auto object-cover border rounded"
-    />
-  </Zoom>
           {/* Main Image with Zoom */}
-{/* <div className="flex flex-col h-full items-center gap-2 w-[400px]">
+<div className="flex flex-col h-full items-center gap-2 w-[400px]">
   <ReactImageMagnify
     {...{
       smallImage: {
@@ -126,7 +116,7 @@ const ProductDetail = () => {
       shouldUsePositiveSpaceLens: true,
     }}
   />
-</div> */}
+</div>
 
 
           {/* Product Info */}
