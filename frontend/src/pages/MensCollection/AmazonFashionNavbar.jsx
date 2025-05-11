@@ -118,37 +118,47 @@ const AmazonFashionNavbar = () => {
           onMouseLeave={() => setHoveredTab(null)}
           className="absolute left-0 w-full bg-white shadow-lg border-t px-4 md:px-10 py-6"
         >
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-            {/* Columns */}
-            {Object.entries(megaMenuData[hoveredTab].columns || {}).map(([heading, items]) => (
-              <div key={heading}>
-                <h4 className="font-semibold text-sm mb-2">{heading}</h4>
-                <ul className="space-y-1 text-gray-700 text-sm">
-                  {items.map((item) => (
-                    <li key={item} className="hover:underline cursor-pointer">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="grid grid-cols-6 gap-6">
+            {(() => {
+              const columns = Object.entries(megaMenuData[hoveredTab].columns || {});
+              const images = megaMenuData[hoveredTab].images || [];
+              const totalSlots = 6;
 
-            {/* Images Section */}
-            {megaMenuData[hoveredTab].images && (
-              <div className="md:col-span-3 flex flex-col md:flex-row gap-4">
-                {megaMenuData[hoveredTab].images.map((img, index) => (
-                  <div key={index} className="text-center text-sm w-full md:w-1/3">
-                    <img
-                      src={img.src}
-                      alt={img.title}
-                      className="w-full h-48 object-contain rounded-md shadow"
-                    />
-                    <h5 className="mt-2 font-semibold">{img.title}</h5>
-                    <p className="text-gray-600">{img.desc}</p>
-                  </div>
-                ))}
-              </div>
-            )}
+              const trimmedColumns = columns.slice(0, Math.min(columns.length, totalSlots));
+              const remainingSlots = totalSlots - trimmedColumns.length;
+              const trimmedImages = images.slice(0, remainingSlots);
+
+              return (
+                <>
+                  {/* Text Columns */}
+                  {trimmedColumns.map(([heading, items]) => (
+                    <div key={heading} className="col-span-1">
+                      <h4 className="font-semibold text-sm mb-2">{heading}</h4>
+                      <ul className="space-y-1 text-gray-700 text-sm">
+                        {items.map((item) => (
+                          <li key={item} className="hover:underline cursor-pointer">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+
+                  {/* Image Cards */}
+                  {trimmedImages.map((img, index) => (
+                    <div key={index} className="col-span-1 text-center text-sm">
+                      <img
+                        src={img.src}
+                        alt={img.title}
+                        className="w-full h-56 object-cover rounded-md shadow"
+                      />
+                      <h5 className="mt-2 font-semibold">{img.title}</h5>
+                      <p className="text-gray-600">{img.desc}</p>
+                    </div>
+                  ))}
+                </>
+              );
+            })()}
           </div>
         </div>
       )}

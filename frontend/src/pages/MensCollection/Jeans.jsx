@@ -128,7 +128,10 @@ const debouncedDispatch = debounce(() => {
               filteredProducts.map((product) => (
              <Link
                          to={`/product/${product._id}`}>   <div key={product._id} className="border p-2 bg-white rounded">
-                  <img src={product?.images[0]} alt={product.title} className="h-56 w-full object-contain" />
+                  <div className='bg-gray-200'>
+
+                  <img src={product?.images[0]} alt={product.title} className="h-56 w-full object-contain mix-blend-darken" />
+                  </div>
                   <h2 className="text-sm font-semibold mt-2">{product.title}</h2>
                   <p className="text-xs text-gray-500">{product?.brand?.name}</p>
                   <p className="text-sm font-bold">₹{product.price}</p>

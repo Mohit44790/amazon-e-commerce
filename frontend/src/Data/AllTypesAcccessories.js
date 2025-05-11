@@ -1023,3 +1023,147 @@ export const womenEthicWear =[
     label:"Dress-Materials"
   },
 ]
+
+export const womenTopBrand=[
+  {
+    id:100,
+    image:"https://m.media-amazon.com/images/I/61q6XrPM8zL._AC_UL320_.jpg",
+    brand:"Rangnavi",
+    description:"Rangnavi Women's Printed Kurta with Palazzo & Dupatta | Ethnic set | Kurta set",
+    ratings:"* * * *",
+    price:"799",
+    MRP:"2400",
+    discount:"68",
+  },
+  {
+    id:101,
+    image:"https://m.media-amazon.com/images/I/61-ZDXdxEwL._AC_UL320_.jpg",
+    brand:"Rangnavi",
+    description:"Rangnavi Women's Cotton Anarkali Printed Kurta with Palazzo & Dupatta Set",
+    ratings:"* * * *",
+    price:"799",
+    MRP:"2400",
+    discount:"68",
+  },
+  {
+    id:102,
+    image:"https://m.media-amazon.com/images/I/61yFWfz+vpL._SX679_.jpg",
+    brand:"BIBA",
+    description:"Biba Women Off-white-Red Cotton Unstitched Suit Set_FREE SIZE",
+    ratings:"* * * *",
+    price:"799",
+    MRP:"2400",
+    discount:"68",
+  },
+  {
+    id:103,
+    image:"https://m.media-amazon.com/images/I/81UVIL8cDhL._SY741_.jpg",
+    brand:"Mehrang",
+    description:"Mehrang Cotton Banarasi Silk Saree for Women With Unstitched Blouse Piece",
+    ratings:"* * * *",
+    price:"499",
+    MRP:"3999",
+    discount:"88",
+  },
+]
+
+
+export const womenWatches =[
+  {
+    id:104,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Final/DOTD_Women._SS400_QL85_.jpg",
+    path:"/w_today_deal",
+    name:"today_deal"
+  },
+  {
+    id:105,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Final/Luxury_brands_women._SS400_QL85_.jpg",
+    path:"/w_luxe_brands",
+    name:"Luxe Brands"
+  },
+  {
+    id:106,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Final/Classic_watches_women_option2._SS400_QL85_.jpg",
+    path:"/w_classic",
+    name:"classic"
+  },
+  {
+    id:107,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Smartwatches._SS400_QL85_.jpg",
+    path:"/w_smarthwatches",
+    name:"smarthwatches"
+  },
+  {
+    id:108,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Final/Pcket_friendly_women._SS400_QL85_.jpg",
+    path:"/w_Value_packs",
+    name:"Value_packs"
+  },
+  {
+    id:109,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Final/Amazon_Special_women._SS400_QL85_.jpg",
+    path:"/w_exclusives",
+    name:"exclusives"
+  },
+  {
+    id:110,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Final/New_launches_women._SS400_QL85_.jpg",
+    path:"/w_new_launches",
+    name:"New launches"
+  },
+  {
+    id:111,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Kids_watches-1._SS400_QL85_.jpg",
+    path:"/w_kids",
+    name:"Kids"
+  },
+  {
+    id:112,
+    image:"https://m.media-amazon.com/images/G/31/img21/Watches2023/July/Lux_store/Halos/Straps__accessories._SS400_QL85_.jpg",
+    path:"/w_accessories",
+    name:"accessories"
+  },
+]
+
+export const wristWatches = [
+ {
+    id:113,
+    image:"https://m.media-amazon.com/images/I/71XT6B8UdQL._AC_UL320_.jpg",
+    brand:"Giordano",
+    description:"Giordano Analog Wrist Watch for Women Stylish Metal Strap with Water Resistant 3 Hand Mechanism for Girls & Ladies to Compliment Your Look/Ideal Gift for Female - GD-4210",
+    ratings:"* * * *",
+    price:"1999",
+    MRP:"8999",
+    discount:"76",
+  },
+ {
+    id:114,
+    image:"https://m.media-amazon.com/images/I/61WK3mlQkgL._AC_UL320_.jpg",
+    brand:"Asan Ge",
+    description:"Asan Ge Women's Water Resistant Watch, Stylish Silicone Strap for Women's Wrists 5IN-7IN, 36MM Dial with Arabic Numerals Easy to Read",
+    ratings:"* * * *",
+    price:"2288",
+    MRP:"3832",
+    discount:"40",
+  },
+ {
+    id:115,
+    image:"https://m.media-amazon.com/images/I/71sfaQUYCXL._AC_UL320_.jpg",
+    brand:"Asan Ge",
+    description:"Asan Ge Women Watch Business Classic Stainless Number Quartz Female Watches for Lady Waterproof Easy to Read Fashion Female Wristwatch",
+    ratings:"* * * *",
+    price:"2288",
+    MRP:"3832",
+    discount:"40",
+  },
+ {
+    id:116,
+    image:"https://m.media-amazon.com/images/I/71UWrVhLCOL._AC_UL320_.jpg",
+    brand:"OLEVS",
+    description:"OLEVS Women's Analog Watch Quartz Rose Gold Stainless Steel Strap Fashion Luxury Business Circular Calendar Simulated",
+    ratings:"* * * *",
+    price:"3288",
+    MRP:"4832",
+    discount:"40",
+  },
+]

@@ -175,12 +175,12 @@ const menuData = [
         ]},
         
           {category:"Accessories",items:[
-            {label:"Watchs",path:"/clothing"},
+            {label:"Watches",path:"/wfashion_watches"},
             {label:"HandBags & Cluthes",path:"/t-Shirts"},
-            {label:"Gold & Diamond Jewellery",path:"/jewellery"},
-            {label:"Fashion & Sliver Jewellery",path:"/jewellery"},
-            {label:"Wallets",path:"/wallets"},
-            {label:"Sunglasses",path:"/shirts"},
+            {label:"Gold & Diamond Jewellery",path:"/wfashion_gold_jewellery"},
+            {label:"Fashion & Sliver Jewellery",path:"/wfashion_silver_jewellery"},
+            {label:"Wallets",path:"/wfashion_wallets"},
+            {label:"Sunglasses",path:"/wfashion_sunglasses"},
           ]},
           {category:"Women's Shoes",items:[
             {label:"Shoes",path:"/shoes"},

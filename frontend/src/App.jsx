@@ -63,6 +63,14 @@ import GroceryForm from "./admin/GroceryForm"
 import GroceryDetails from "./pages/GroceryDetails"
 import WomenWesternWear from "./pages/womenCollection/WomenWesternWear"
 import WomenEthiceWear from "./pages/womenCollection/WomenEthiceWear"
+import Watches from "./pages/MensCollection/Accessories/Watches"
+import BagsAndLuggage from "./pages/MensCollection/Accessories/BagsAndLuggage"
+import Sunglasses from "./pages/MensCollection/Accessories/Sunglasses"
+import Jewellery from "./pages/MensCollection/Accessories/Jewellery"
+import Wallets from "./pages/MensCollection/Accessories/Wallets"
+import Shoes from "./pages/MensCollection/Men's Shoes/Shoes"
+import WomenWatches from "./pages/womenCollection/Accessories/WomenWatches"
+import WristWatches from "./pages/womenCollection/Accessories/WristWatches"
 
 
 
@@ -114,12 +122,20 @@ function App() {
             { path: "/t-Shirts", element: <TShirtsPolos />},  
             { path: "/shirts", element: <Shirts />},  
             { path: "/jeans", element: <Jeans />}, 
+            { path: "/watches", element: <Watches />}, 
+            { path: "/bags-luggage", element: <BagsAndLuggage />}, 
+            { path: "/sunglasses", element: <Sunglasses />}, 
+            { path: "/jewellery", element: <Jewellery />}, 
+            { path: "/wallets", element: <Wallets />}, 
+            { path: "/shoes", element: <Shoes />}, 
             // women 
         { path:"/clothing", element:<WomenClothes />},
 
             { path: "/women-topbrand", element: <WomenTopBrands />}, 
             { path: "/western-Wear", element: <WomenWesternWear />}, 
             { path: "/ethic-Wear", element: <WomenEthiceWear />}, 
+            { path: "/wfashion_watches", element: <WomenWatches />}, 
+            { path: "/wrist-watches", element: <WristWatches />}, 
 
        
       ]
