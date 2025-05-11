@@ -1,8 +1,8 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Express API for deployment",
+  "main": "backend/index.js",
   "type": "module",
   "scripts": {
     "start": "node backend/index.js",
