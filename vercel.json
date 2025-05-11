@@ -1,5 +1,3 @@
-
-
 {
   "version": 2,
   "builds": [
@@ -17,7 +15,7 @@
   ],
   "routes": [
     {
-      "src": "/backend/(.*)",
+      "src": "/api/(.*)",
       "dest": "/backend/$1"
     },
     {
