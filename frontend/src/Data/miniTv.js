@@ -85,3 +85,45 @@ export const miniTvbannerImage = [
         image:"https://m.media-amazon.com/images/S/pv-target-images/f213a52e9669dd2ee178853c463320af409229fcfc1064dc596723cbf19c0d87.__SX330__SY186__QL60__._TTW_.png"
     },
   ]
+  export const Web_Series =[
+    {
+        id:11,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/63eafac1297d2f0b17082076825178675c04f54ac68f0bd3e49fc9ab447ff346.__SX330__SY186__QL60__._TTW_.png"
+    },
+    {
+        id:12,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/a92ee34010d3314f0007fdfb4b19954c61414ac8ee1b5d2ec570b6fcec1cc39f.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:13,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/4d94e46250adab0a1be4f2efa728a07617bb3613759d3d92f3a9d9b481620646.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:14,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/f1fc67605e6f7c938fb02067b273745a16e68f28e63737bc9f9dce400dd10abb.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:15,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/7f80d52741de8c288db96b5d3c9006c3e852a507b5c8050e333528f41f435209.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:16,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/9614b34303ee59f2a0ed3915ec883372c4a3f335ee8eb17f3a9d021f3b4c31c7.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:17,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/dc43ab2db5261d6ecfca452115896a465a624e7d2a40c4c8181a321b3de8819a.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:18,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/e3149bbb29ceccfa3efa54c470f21614178537eabed99bfe0b49db3fdcfad668.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:19,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/4524df59b8e408fc35106fce1ddbc496fad69e47ac2f5110d4d61508c753c29e.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+    {
+        id:20,
+        image:"https://m.media-amazon.com/images/S/pv-target-images/274f5ca1e83c8dad3e5dd389e0a43ba0484e42ad6710f839bcc83ef4d6d9a717.__SX330__SY186__QL60__._TTW_.jpg"
+    },
+  ]

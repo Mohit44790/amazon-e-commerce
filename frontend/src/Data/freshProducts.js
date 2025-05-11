@@ -118,7 +118,7 @@ export const suparSaver = [
 ]
 
 
-export const groceries=[
+export const grocery=[
 {
   id:10,
   image:"https://m.media-amazon.com/images/G/31/img18/Fresh/SBCTILES/UPDATED/FV.jpg"

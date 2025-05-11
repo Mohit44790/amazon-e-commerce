@@ -320,10 +320,12 @@ export const fashionCategories = [
           {
             label: "Men Clothings",
             img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/mens/mens-1._SS300_QL85_FMpng_.png",
+            path: "/shirts",
           },
           {
             label: "Women Clothings",
             img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/womens._SS300_QL85_FMpng_.png",
+            path: "/clothing"
           },
           {
             label: "Kids Clothings",
@@ -610,4 +612,414 @@ export const fashionCategories = [
 
  ]
 
-      
+ export const womenFashion=[
+  {
+    label: "Kurtas & Sets",
+    img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Salwarsuits._SS400_QL85_FMpng_.png",
+  },
+  {
+    label: "Top & tees",
+    img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Tops__Tees._SS400_QL85_FMpng_.png",
+  },
+  {
+    label: "Saree",
+    img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Sarees._SS400_QL85_FMpng_.png",
+  },
+  {
+    label: "Active Wears",
+    img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Activewear._SS400_QL85_FMpng_.png",
+  },
+  {
+    label: "sleepWear",
+    img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Sleepwear._SS400_QL85_FMpng_.png",
+  },
+  {
+    label: "Jewellery",
+    img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/jewellery._SS300_QL85_FMpng_.png",
+  },
+  {
+    label: "Watches",
+    img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/watches._SS300_QL85_FMpng_.png",
+  },
+  {
+    label: "Beauty",
+    img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/beauty._SS300_QL85_FMpng_.png",
+  },
+  {
+    label: "handBags",
+    img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/handbags._SS300_QL85_FMpng_.png",
+  },
+  {
+    label: "Sungalles & Frames",
+    img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/3.0/Halos/eyewear._SS300_QL85_FMpng_.png",
+  },
+ ]     
+
+ export const westerwear=[
+  {
+  
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Tops__Tees._CB558287246_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Dresses__Jumpsuits._CB558287246_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Jeans__Jeggings._CB558287246_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Activewear._CB558287246_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Sleepwear._SS400_QL85_FMpng_.png",
+  },
+
+ 
+ ]     
+ export const ETHNICWEAR=[
+  {
+  
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Kurtas__Kurtis._CB558288617_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Sarees._CB558288617_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Salwarsuits._CB558288617_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Fusion_Wear._CB558288617_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Ethnic_Bottoms._CB558288617_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/p0SBC/Maternity_Wear._CB558288617_.png",
+  },
+
+ 
+ ]     
+ export const Mostcovered =[
+  {
+  
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0MAYARTBIF/BIBA_364x566._CB795055350_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0MAYARTBIF/Levis_364x566_1._CB795055350_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0MAYARTBIF/Libas_364x566._CB795055350_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0MAYARTBIF/Souled_sotre_364x566._CB795055350_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/P0MAYARTBIF/Veromoda_364x566._CB795055350_.png",
+  },
+  
+
+ 
+ ]     
+ export const CELEBAPPROVED =[
+  {
+  
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/Celeb/Levis_770x500._CB554662680_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/Celeb/W_770x500._CB554662680_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/Celeb/ONLY_770x500._CB554662680_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/Celeb/Madame_770x500._CB554662680_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/Celeb/Bewakoof_770x500._CB554662680_.jpg",
+  },
+  
+
+ 
+ ]     
+ export const INDIEBRAND =[
+  {
+  
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/BIBA_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Global_desi_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Rangita_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Indya_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Fab_india_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Ishin_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Indoera_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/Soch_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Gocolors_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/Ada_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/PD/Janasya_564x940._SY530_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/Kurtabrands/W_for_women_564x940._SY530_QL85_.jpg",
+  },
+  
+
+ 
+ ]     
+ export const TredingTops =[
+  {
+  
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/Madame._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/Levis_6._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/The-souled-store-40-65-Off_4._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/ONLY-60-80-Off_1._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/USPA-Up-to-55-off_3._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/Bewakoof-Min-70-Off_2._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/Marks-spencer-Min-50-off_0._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/Veromoda-60-80-Off_7._SS400_QL85_FMpng_.png",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/tOPSBRANDS/Symbol-Under-499_5._SS400_QL85_FMpng_.png",
+  },
+
+
+ 
+ ]     
+ export const BestDresses =[
+  {
+  
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Symbol_premium_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Marks_and_spencer_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Veromoda_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/ONLY_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Miss_chase_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Greciilooks_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Faballey_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Madame_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Harpa_564x940._SS400_QL85_.jpg",
+  },
+  {
+    
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WomensApparel2024/WASD/DRESSES/Globus_564x940._SS400_QL85_.jpg",
+  },
+
+
+ 
+ ]     
+
+ export const Menfashion = [
+  {
+    src: "https://m.media-amazon.com/images/G/31/img21/MA2023/Nov/halo/Premium_Brands._SS300_QL85_FMpng_.png",
+    name: "premium-brands",
+  },
+  {
+    src: "https://m.media-amazon.com/images/G/31/img21/MA2024/SS24flip/Halos/withoutshadow/SHIRTS._SS300_QL85_FMpng_.png",
+    name: "shirts",
+  },
+  {
+    src: "https://m.media-amazon.com/images/G/31/img21/MA2023/Nov/halo/lATEST_sTYLES._SS300_QL85_FMpng_.png",
+    name: "latest-styles",
+  },
+  {
+    src: "https://m.media-amazon.com/images/G/31/img21/MA2024/SS24flip/Halos/withoutshadow/tshirt._SS300_QL85_FMpng_.png",
+    name: "tshirt",
+  },
+  {
+    src: "https://m.media-amazon.com/images/G/31/img21/MA2024/SS24flip/Halos/withoutshadow/ATHLEISURE._SS300_QL85_FMpng_.png",
+    name: "athleisure",
+  },
+];
+
+
+export const brandDeal =[
+  {
+    label: "Galaxy M06 5G",
+    image: "https://m.media-amazon.com/images/G/31/img23/Wireless/Samsung/MAYART25/Ascent/24April/D236984678_WLD_MAYART_SAMSUNG_ASCENTImage-Carousalll_BIF-deals_4.jpg",
+    path: "/mobiles",
+  },
+  {
+    label: "ASUS Vivobook",
+    image: "https://m.media-amazon.com/images/G/31/mayart24/intel/5-Image-Carousalll_BIF-deals.jpg",
+    path: "/asus",
+  },
+  {
+    label: "Samsung",
+    image: "https://m.media-amazon.com/images/G/31/IMG23/TVs/Shra/MayArt_25/Co-op/SS_43_Image-Carousalll_BIF-deals.jpg",
+    path: "/Samsung",
+  },
+  {
+    label: "voltas AC",
+    image: "https://m.media-amazon.com/images/G/31/IMG15/Irshad/MayART25/Image-Carousalll_BIF-deals_02.jpg",
+    path: "/ac",
+  },
+  {
+    label: "vida v2 plus ",
+    image: "https://m.media-amazon.com/images/G/31/2025/Auto/MayArt/Acent/Vida-V2-Plus.jpg",
+    path: "/bike",
+  },
+  {
+    label: "boats ",
+    image: "https://m.media-amazon.com/images/G/31/img24hp/MayArt_Headphones_launch/Image-Carousalll_BIF-deals.jpg",
+    path: "/earphones",
+  },
+]
+
+
+export const westernWear = [
+  {
+    label: "Tops & Tees",
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/WWMay25/Halos/Tops__Tees._SS400_QL85_FMpng_.png",
+    path: "/tops",
+  },
+  {
+    label: "Dresses",
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/WWMay25/Halos/Dresses__Jumpsuits._SS400_QL85_FMpng_.png",
+    path: "/dresses",
+  },
+  {
+    label: "shirts",
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/WWMay25/Halos/Shirts._SS400_QL85_FMpng_.png",
+    path: "/shirts",
+  },
+  {
+    label: "Jeans",
+    image: "https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/WWMay25/Halos/Jeans._SS400_QL85_FMpng_.png",
+    path: "/jeans",
+  },
+
+]
+
+export const womenEthicWear =[
+  {
+    id:1,
+    image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Kurtas__Kurtis._SS400_QL85_FMpng_.png",
+    path:"/kurtas-Kurtis",
+    label:"Kurtas-kurtis"
+  },
+  {
+    id:2,
+    image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Salwar_Suits._SS400_QL85_FMpng_.png",
+    path:"/salwar-Suits",
+    label:"Salwar-suits"
+  },
+  {
+    id:3,
+    image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Ethnic_Bottoms._SS400_QL85_FMpng_.png",
+    path:"/ethics_bottom",
+    label:"Ethics-bottom"
+  },
+  {
+    id:4,
+    image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Lehengas._SS400_QL85_FMpng_.png",
+    path:"/lehengas",
+    label:"Lehengas"
+  },
+  {
+    id:5,
+    image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Dupattas._SS400_QL85_FMpng_.png",
+    path:"/dupattas",
+    label:"Dupattas"
+  },
+  {
+    id:6,
+    image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Curvy-Girl_Styles._SS400_QL85_FMpng_.png",
+    path:"/plus-size",
+    label:"Plus-size"
+  },
+  {
+    id:7,
+    image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Dress_Material._SS400_QL85_FMpng_.png",
+    path:"/dress-materials",
+    label:"Dress-Materials"
+  },
+]

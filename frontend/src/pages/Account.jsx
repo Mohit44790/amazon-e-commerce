@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Account = () => {
   return (
@@ -49,10 +50,10 @@ const Account = () => {
             alt=""
             className="w-12 h-12 object-contain"
           />
-          <div>
+        <Link to={"/addresses"}>  <div>
             <h2 className="font-medium text-lg mb-1">Your Addresses</h2>
             <p className="text-sm text-gray-600">Edit addresses for orders and gifts</p>
-          </div>
+          </div></Link>
         </div>
 
         <div className="flex border rounded-lg p-4 shadow-sm hover:bg-gray-100 cursor-pointer transition space-x-4">

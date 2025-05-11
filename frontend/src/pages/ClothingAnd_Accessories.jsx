@@ -100,7 +100,7 @@ const ClothingAnd_Accessories = () => {
       {/* Top navigation */}
       <div className="relative">
       {/* Top Bar */}
-      <div className="flex justify-between items-center text-sm py-3 border-b px-4 md:px-6 bg-white z-50 relative">
+      <div className="flex justify-between items-center text-sm py-3 border-b px-4 md:px-6 bg-white z-50 ">
         <h1 className="text-xl md:text-2xl font-semibold">Amazon Fashion</h1>
         {/* <div className="flex gap-6"> */}
           {fashionTabs.map((tab) => (

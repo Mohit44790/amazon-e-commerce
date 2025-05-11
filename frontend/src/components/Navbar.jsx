@@ -4,79 +4,121 @@ import { LiaCartArrowDownSolid } from "react-icons/lia";
 import { IoIosArrowDown, IoIosArrowForward, IoIosArrowUp, IoMdArrowDropdown } from "react-icons/io";
 
 import { allProducts, electronics, electronicsItems, products } from '../Data/DataProduct';
-import {  Link, useNavigate } from 'react-router';
-import { useCart } from '../context/CartContext';
+import { Link, useNavigate } from 'react-router-dom';
+
+// import { useCart } from '../context/CartContext';
 import { MdArrowDropUp } from 'react-icons/md';
 import { allBrands, mockProducts } from '../Data/AllTypesAcccessories';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from "../redux/slice/authSlice";
+import { toggleCart } from '../redux/slice/cartSlice';
+import CartSidebar from './CartSidebar';
+import SearchBar from '../pages/SearchBar';
+import { useTranslation } from "react-i18next";
+
+
+
 
 
 const Navbar = () => {
-  const [query, setQuery] = useState('');
-  const { cartCount, toggleCart } = useCart();
-    const [suggestions, setSuggestions] = useState([]);
-    const navigate = useNavigate();
+  
+    const { i18n } = useTranslation();
+  
+    const changeLanguage = (e) => {
+      i18n.changeLanguage(e.target.value);
+    };
+    const { t } = useTranslation();
+  // const [query, setQuery] = useState('');
+  // const { toggleCart } = useCart();
+  // const [suggestions, setSuggestions] = useState([]);
+  const navigate = useNavigate();
   const [showMenu,setShowMenu] =useState(false);
+  const dispatch = useDispatch();
+  // const userInfo = useSelector((state) => state.userInfo);
+  const  {user}  = useSelector((state) => state.auth);
+  const cartItems = useSelector((state) => state.cart.items);
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
+  // Count total quantity
+  const cartCount = Array.isArray(cartItems) 
+  ? cartItems.reduce((total, item) => total + (item.quantity || 1), 0)
+  : 0;
+  // const userInfo = localStorage.getItem("userInfo");
   
-    if (value.trim() === '') {
-      setSuggestions([]);
-    } else {
-      const input = value.toLowerCase();
-      const combinedProducts = [
-        ...allProducts,
-        ...electronics,
-        ...electronicsItems,
-        ...products,
-        ...allBrands,
-        ...mockProducts
-      ].filter((item) => item.brand || item.category);
+
+  const handleLogout = () => {
+    dispatch(logoutUser()); // clear user from redux
+    navigate("/signin");    // redirect to sign-in
+  };
+
+  // const handleChange = (e) => {
+  //   const value = e.target.value;
+  //   setQuery(value);
   
-      const filtered = combinedProducts.filter((item) =>
-        item.brand.toLowerCase().includes(input) ||
-        item.category?.toLowerCase().includes(input) // safe check for category
-      );
+    // if (value.trim() === '') {
+    //   setSuggestions([]);
+    // } else {
+    //   const input = value.toLowerCase();
+    //   const combinedProducts = [
+    //     ...allProducts,
+    //     ...electronics,
+    //     ...electronicsItems,
+    //     ...products,
+    //     ...allBrands,
+    //     ...mockProducts
+    //   ].filter((item) => item.brand || item.category);
   
-      setSuggestions(filtered);
-    }
+      // const filtered = combinedProducts.filter((item) =>
+      //   item.brand.toLowerCase().includes(input) ||
+      //   item.category?.toLowerCase().includes(input) // safe check for category
+      // );
+  
+  //     setSuggestions(filtered);
+  //   }
+  // };
+  
+ 
+    //add to cart count
+    const isCartOpen = useSelector(state => state.cart.isCartOpen);
+
+  const handleToggle = () => {
+    dispatch(toggleCart());
   };
   
-    
-    
   
-    const handleSelect = (id) => {
-      setQuery('');
-      setSuggestions([]);
-      navigate(`/product/${id}`);
-    };
+    // const handleSelect = (id) => {
+    //   setQuery('');
+    //   setSuggestions([]);
+    //   navigate(`/product/${id}`);
+    // };
   return (
     <>
-    <div className="bg-black text-white px-4 py-3">
-      <div className="flex flex-wrap justify-between items-center gap-4">
+    <div className="bg-black text-white px-4 py-3 w-full">
+      <div className="flex flex-wrap justify-between items-center gap-y-4 sm:gap-y-0">
+     
+      
 
         {/* Logo */}
-        <div className="flex items-center">
+     <Link to={"/"}>  <div className="flex items-center">
           <img
             src="https://www.pngplay.com/wp-content/uploads/3/White-Amazon-Logo-PNG-HD-Quality.png"
             alt="amazon"
             className="w-28 object-contain"
           />
-        </div>
+        </div></Link> 
 
         {/* Location */}
         <div className="hidden sm:flex flex-col justify-center items-start text-sm">
-          <p >Delivery to Delhi </p>
+          <p>{t("deliveryToDelhi")}</p>
+          {/* <p>{t("deliveryToDelhi")}</p> */}
           <div className="flex items-center gap-1">
             <CiLocationOn size={20} />
-            <span className="font-bold">Update location</span>
+            <span className="font-bold">{t("updateLocation")}</span>
           </div>
         </div>
 
         {/* Search bar */}
-        <div className="flex flex-grow max-w-2xl w-full">
-        <div className="flex w-full bg-white rounded overflow-hidden  ">
+        <div className="w-full sm:flex sm:flex-grow sm:max-w-2xl">
+        {/* <div className="flex w-full bg-white rounded overflow-hidden  ">
             <div className="flex items-center px-2 bg-gray-100 text-black">
               <span className="flex items-center gap-1 text-sm">All <IoIosArrowDown /></span>
             </div>
@@ -103,15 +145,18 @@ const Navbar = () => {
             <button className="bg-orange-400 p-2 text-black flex items-center justify-center">
               <CiSearch size={22} />
             </button>
-          </div>
+          </div> */}
+          <SearchBar/>
         </div>
 
         {/* Language Selector */}
         <div className="hidden sm:block">
-          <select className="bg-gray-200 text-black text-sm px-1 w-12 py-1 rounded">
-            <option value="en">EN</option>
-            <option value="hi">Hindi</option>
-            <option value="mr">Marathi</option>
+          <select onChange={changeLanguage}
+        value={i18n.language} className="bg-gray-200 text-black text-sm px-1 w-12 py-1 rounded">
+           <option value="en">English</option>
+<option value="hi">हिन्दी</option>
+<option value="mr">मराठी</option>
+
           </select>
         </div>
 
@@ -122,9 +167,14 @@ const Navbar = () => {
     >
       {/* Trigger */}
       <div className="cursor-pointer">
-        <p>Hello, sign in</p>
+     
+        <p className="text-sm">
+  {t("hello")}, <span className="font-medium">{user?.name ? user.name : 'sign in'}</span>
+</p>
+
+        
         <h2 className="font-bold flex items-center">
-          Account & Lists <IoMdArrowDropdown className="ml-1" />
+          {t("accountAndList")} <IoMdArrowDropdown className="ml-1" />
         </h2>
       </div>
 
@@ -133,7 +183,7 @@ const Navbar = () => {
         <div className="absolute z-50 bg-white text-black w-[400px] shadow-lg p-4 top-10 right-0 -left-40 border border-gray-200 rounded-md">
           <MdArrowDropUp size={28} className='relative -top-8 left-60  text-white' />
           <div className="border-b bg-blue-100 py-1  px-2 text-center rounded-lg flex justify-between  mb-2">
-            <p>Who is Shopping? Select a Profile</p>
+            <p>Who is Shopping? {user?.name ? user.name : 'Select a Profile'}</p>
             <button className="text-blue-600 font-semibold flex items-center">Manage Profiles <IoIosArrowForward /></button>
           </div>
           <div className="flex justify-between text-sm">
@@ -146,19 +196,33 @@ const Navbar = () => {
                 <li>Baby Wishlist</li>
                 <li>Discover Your Style</li>
                 <li>Explore Showroom</li>
+                <Link to={"/user/giftcards/redeem"}> <li>Redeem</li></Link>
+                <Link to={"/user/giftcards"}> <li>Gift Card</li></Link>
               </ul>
             </div>
             {/* Your Account */}
             <div>
               <h3 className="font-bold mb-2">Your Account</h3>
               <ul className="space-y-1">
+              {/* <Link to="/admin"><ul><AdminDashboard /></ul></Link> */}
+              {user?.role === "admin" && (
+  <li>
+    <Link to="/admin">
+      <button className="btn-admin text-blue-500">Go to Admin Dashboard</button>
+    </Link>
+  </li>
+)}
+
+{/* {console.log(user?.role)} {/* Add this to check the role */}
+{/* {user?.role === "admin" ? AdminDashboard : "Not Admin"} */} 
+
                 <li>Your Orders</li>
                 <li>Your Wish List</li>
                 <li>Your Recommendations</li>
                 <li>Prime Membership</li>
                 <li>Content Library</li>
                 <li>Switch Accounts</li>
-               <Link to={"/signin"}> <li>Sign Out</li></Link>
+                <li onClick={handleLogout} className="cursor-pointer">Sign Out</li>
               </ul>
             </div>
           </div>
@@ -167,24 +231,28 @@ const Navbar = () => {
     </div>
 
         {/* Orders */}
-        <div className="hidden sm:block text-sm text-left">
-          <p>Returns</p>
-          <h2 className="font-bold">& Orders</h2>
-        </div>
+        <Link to="/my-orders">  <div className="hidden sm:block text-sm text-left">
+          <p>{t("return")}</p>
+          <h2 className="font-bold">{t("order")}</h2>
+        </div></Link> 
 
         {/* Cart */}
-        <div
-  className="relative flex items-center gap-1 cursor-pointer"
-  onClick={toggleCart}
->
-  <LiaCartArrowDownSolid size={38} />
+        <div>
+      <div
+        className="relative flex items-center gap-1 cursor-pointer"
+        onClick={handleToggle}
+      >
+        <LiaCartArrowDownSolid size={38} />
+        <span className="absolute top-1 right-10 bg-black text-orange-600 font-bold text-xs px-1.5 rounded-full shadow">
+  {cartCount}
+</span> 
+        Cart
+      </div>
 
-    <span className="absolute -top-0 right-10 bg-black text-orange-600 font-bold text-sm px-1 rounded-full shadow">
-      {cartCount}
-    </span>
-  
-  <span className="text-sm font-bold">Cart</span>
-</div>
+      {isCartOpen && (
+       <CartSidebar className="text-black"/>
+      )}
+    </div>
 
       </div>
     </div>

@@ -1,87 +1,135 @@
 // components/ProductDetail.jsx
 import { Link, useParams } from 'react-router-dom';
-import { allProducts, electronics, electronicsItems, products } from '../Data/DataProduct';
-import { useState } from 'react';
-import { useCart } from '../context/CartContext';
-import { mockProducts } from '../Data/AllTypesAcccessories';
-
-
-
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProductById } from '../redux/slice/productSlice';
+import { addToCart } from '../redux/slice/cartSlice';
+import { toast } from 'react-toastify';
+import ProductReviews from './ProductReviews';
+import ReactImageMagnify from 'react-image-magnify';
 const ProductDetail = () => {
   const { id } = useParams();
-  const {addToCart}=useCart();
-  const allProduct = [...electronics, ...electronicsItems,...products,...allProducts,...mockProducts];
-  const product = allProduct.find((p) => String(p.id) === String(id));
-  if (!product) {
-    return <div className="text-center text-red-500 mt-10">Product not found</div>;
-  }
+  const dispatch = useDispatch();
+  const { single: product, loading, error } = useSelector((state) => state.products);
+  const { user } = useSelector((state) => state.auth);
 
-  const [selectedImage, setSelectedImage] = useState(product.image[0]);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    dispatch(fetchProductById(id));
+  }, [dispatch, id]);
+
+  useEffect(() => {
+    if (product?.images?.length > 0) {
+      setSelectedImage(product.images[0]);
+    }
+  }, [product]);
 
   const handleImageClick = (img) => {
     setSelectedImage(img);
   };
+
+  const handleAddToCart = async (product) => {
+    try {
+      const itemData = {
+        productId: product._id,
+        name: product.name, // ✅ add this
+        price: product.price,
+        images: product.images[0],
+        colors: product.colors,
+        sizes: product.sizes,
+        quantity: 1
+      };
+  
+      await dispatch(addToCart(itemData)).unwrap();
+      toast.success("Item added to cart!");
+    } catch (err) {
+      toast.error("Failed to add item to cart.");
+    }
+  };
  
+
+  if (loading) return <p className="text-center py-4">Loading product...</p>;
+  if (error) return <p className="text-red-500 text-center py-4">{error}</p>;
+  if (!product) return <p className="text-center text-red-500 mt-10">Product not found</p>;
 
   return (
     <>
       {/* Breadcrumb Navigation */}
       <div className="flex gap-2 text-sm text-gray-600 mx-4 border-b justify-between items-center py-2 overflow-x-auto">
         {[
-          "Electronics",
-          "Mobiles & Accessories",
-          "Laptop & Accessories",
-          "Tv & Home Entertainment",
-          "Audio",
-          "Cameras",
-          "Computers Peripherals",
-          "Smart Technology",
-          "Musical Instruments",
-          "Office & Stationary",
+          "Electronics", "Mobiles & Accessories", "Laptop & Accessories", "Tv & Home Entertainment",
+          "Audio", "Cameras", "Computers Peripherals", "Smart Technology", "Musical Instruments", "Office & Stationary"
         ].map((cat, i) => (
           <p key={i}>{cat}</p>
         ))}
       </div>
 
-      <div className="p-6 mx-auto bg-white rounded shadow ">
-        <h1 className="text-2xl font-bold mb-4">{product.brand}</h1>
+      <div className="p-6 mx-auto bg-white rounded shadow">
+        <h1 className="text-2xl font-bold mb-4">{product?.name}</h1>
 
-        <div className="flex flex-col sm:flex-row gap-8">
-          {/* Images Section */} 
-         
-          <div className=" gap-2 flex-wrap">
-          {product.image.map((img, idx) => (
-      <img
-        key={idx}
-        src={img}
-        alt={`thumb-${idx}`}
-        onClick={() => handleImageClick(img)}
-        className={`w-16 h-16 object-contain border rounded cursor-pointer ${
-            selectedImage === img ? 'border-blue-500' : 'border-gray-300'
-        }`}
-      />
-    ))}
-            </div>
-            
-          <div className="flex flex-col items-center gap-2">
-          
-            <img
-              src={selectedImage}
-              alt="Selected"
-              className="w-96 h-96 object-contain border rounded"
-            />
-           
+        <div className="flex flex-col  sm:flex-row gap-8">
+          {/* Thumbnails */}
+          <div className="flex flex-col gap-2">
+            {product.images?.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`thumb-${index}`}
+                onClick={() => handleImageClick(img)}
+                className={`w-16 h-20 object-cover border rounded cursor-pointer ${
+                  selectedImage === img ? 'border-blue-500' : 'border-gray-300'
+                }`}
+              />
+            ))}
           </div>
 
+          {/* Main Image */}
+          {/* <div className="flex flex-col h-full items-center gap-2">
+            <img
+              src={selectedImage || product?.images?.[0]}
+              onError={(e) => e.target.src = "/placeholder.jpg"}
+              alt="Selected"
+              className="w-96 h-full object-cover border rounded"
+            />
+          </div> */}
+          {/* Main Image with Zoom */}
+<div className="flex flex-col h-full items-center gap-2 w-[400px]">
+  <ReactImageMagnify
+    {...{
+      smallImage: {
+        alt: 'Product Image',
+        isFluidWidth: true,
+        src: selectedImage || product?.images?.[0],
+      },
+      largeImage: {
+        src: selectedImage || product?.images?.[0],
+        width: 1200,
+        height: 1800,
+      },
+      enlargedImageContainerDimensions: {
+        width: '200%',
+        height: '100%',
+      },
+      enlargedImagePosition: 'beside',
+      isHintEnabled: true,
+      shouldUsePositiveSpaceLens: true,
+    }}
+  />
+</div>
+
+
           {/* Product Info */}
-          <div className="flex-1 space-y-2 text-sm">
-            <p><strong>Description:</strong> {product.description}</p>
-            <p><strong>Brand:</strong> {product.brand}</p>
-            <p><strong>Rating:</strong> {product.rating} ⭐</p>
-            <p><strong>Reviews:</strong> {product.reviews}</p>
-            <p><strong>Discount:</strong> {product.discount}%</p>
-            <p><strong>Price:</strong> ₹{product.price}</p>
-            <p><strong>M.R.P:</strong> <span className="line-through text-gray-400">₹{product.mrp}</span></p>
+          <div className="border p-4 rounded-md shadow bg-gray-50 space-y-2 text-sm">
+            <p><strong>Description:</strong> {product?.description}</p>
+            <p><strong>Brand:</strong> {product?.name}</p>
+            <p><strong>Rating:</strong> {product?.rating} ⭐</p>
+            <p><strong>Reviews:</strong> {product?.reviews}</p>
+            <p><strong>Color:</strong> {product?.colors?.join(', ')}</p>
+  <p><strong>Size:</strong> {product?.sizes?.join(', ')}</p>
+  <p><strong>Discount:</strong> {product?.discount}%</p>
+            <p><strong>Price:</strong> ₹{product?.price}</p>
+            <p><strong>M.R.P:</strong> <span className="line-through text-gray-400">₹{product?.mrp}</span></p>
             <ul className="list-disc ml-5 mt-2 text-gray-700">
               <li>7 days Service Centre Replacement</li>
               <li>Free Delivery</li>
@@ -101,7 +149,7 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          {/* Buy Box */}
+          {/* Buy Section */}
           <div className="border p-4 w-72 rounded-md shadow space-y-2 text-sm">
             <p className="text-xl font-bold">₹{product.price}</p>
             <p className="text-green-600 font-semibold">Fulfilled</p>
@@ -120,13 +168,15 @@ const ProductDetail = () => {
               <p><strong>Quantity:</strong> 1</p>
               <button
   className="w-full bg-yellow-400 hover:bg-yellow-500 py-2 rounded-full mt-2 font-semibold"
-  onClick={() => addToCart(product)}
+  onClick={() => handleAddToCart(product)} // ✅ now product is passed correctly
 >
   Add to Cart
 </button>
-            <Link to={"/buynow"}> <button className="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-full mt-2 font-semibold text-white">
-                Buy Now
-              </button></Link> 
+              <Link to="/buynow">
+                <button className="w-full bg-orange-500 hover:bg-orange-600 py-2 rounded-full mt-2 font-semibold text-white">
+                  Buy Now
+                </button>
+              </Link>
             </div>
             <div className="text-blue-600 underline text-sm mt-2 cursor-pointer">
               Add gift options
@@ -139,6 +189,10 @@ const ProductDetail = () => {
           <strong>Other sellers on Amazon:</strong><br />
           New (2) from ₹{product.price} &nbsp; FREE Delivery on first order.
         </div>
+      </div>
+      <div className='mx-4'>
+      <ProductReviews productId={product._id} />
+
       </div>
     </>
   );

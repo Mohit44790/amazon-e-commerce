@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IoIosArrowBack, IoIosArrowForward, IoIosArrowUp } from 'react-icons/io';
 import { fashionBanner, fashionBanner2, fashionBanner3, fashionBanner4, fashionCategories } from '../Data/AllTypesAcccessories';
+import { useNavigate } from 'react-router';
 const fashionTabs = [
     "Women",
     "Men",
@@ -58,6 +59,7 @@ const Fashion = () => {
     const [hoveredTab, setHoveredTab] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const scrollRef = useRef();
+    const navigate = useNavigate();
     const scroll = (direction) => {
         if (scrollRef.current) {
           const scrollAmount = scrollRef.current.offsetWidth / 2;
@@ -163,10 +165,10 @@ const Fashion = () => {
         <IoIosArrowBack size={30} />
       </button>
 
-      <div className="overflow-x-auto no-scrollbar flex gap-4" ref={scrollRef}>
+      <div className="overflow-x-auto   flex gap-4" ref={scrollRef}>
         {fashionCategories.map((cat, index) => (
-          <div key={index} className="min-w-[140px] text-center flex-shrink-0">
-            <img src={cat.img} alt={cat.label} className="w-32 h-32 mx-auto object-contain" />
+          <div key={index} onClick={() => navigate(cat.path)} className="min-w-[140px] text-center flex-shrink-0">
+            <img src={cat.img} alt={cat.label}  className="w-32 h-32 cursor-pointer mx-auto object-contain" />
             <p className="mt-2 text-sm">{cat.label}</p>
           </div>
         ))}

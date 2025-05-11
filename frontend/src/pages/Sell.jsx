@@ -1,6 +1,17 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const Sell = () => {
+
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/api/sales/assigned-products')
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.error('Error loading today deals:', err));
+  }, []);
   return (
     <div>
       {/* Top Banner Section */}
@@ -106,6 +117,78 @@ const Sell = () => {
           </button>
         </div>
       </div>
+     {/* Todays Deal  */}
+      <div className="p-4">
+      <h2 className="text-2xl font-bold mb-4">Today Deals</h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-4">
+  {products.length === 0 ? (
+    <p className="text-gray-500">No deals available right now.</p>
+  ) : (
+    products.map((item) => {
+      const promotionStart = item?.promotion?.startDate
+        ? new Date(item.promotion.startDate)
+        : null;
+      const promotionEnd = item?.promotion?.endDate
+        ? new Date(item.promotion.endDate)
+        : null;
+      const now = new Date();
+
+      const isOfferActive =
+        promotionStart && promotionEnd && now >= promotionStart && now <= promotionEnd;
+
+      const discountedPrice = isOfferActive
+        ? parseFloat(item.price) - (parseFloat(item.price) * (item.discount || 0)) / 100
+        : item.price;
+
+      return (
+        <div
+          key={item._id}
+          className="bg-white h-full shadow-md rounded-lg overflow-hidden"
+        >
+          <img
+            src={item.images?.[0] || "/placeholder.jpg"}
+            alt={item.name}
+            className="w-full h-72 object-cover"
+          />
+          <div className="p-4">
+            <h3 className="text-lg font-semibold">{item.name}</h3>
+            <p className="text-sm text-gray-600">{item.description?.slice(0, 60)}...</p>
+            <p className="mt-2">
+              <span className="text-red-500 font-semibold">
+                {item.discount}% OFF
+              </span>
+            </p>
+            <p>
+              <span className="line-through text-gray-400 text-sm">₹{item.price}</span>{' '}
+              <span className="text-green-700 font-bold text-lg">₹{discountedPrice.toFixed(2)}</span>
+            </p>
+            <p className="text-sm mt-1">
+              {promotionStart && promotionEnd ? (
+                isOfferActive ? (
+                  <span className="text-green-600 font-medium">Active Offer</span>
+                ) : now < promotionStart ? (
+                  <span className="text-yellow-500 font-medium">Upcoming Offer</span>
+                ) : (
+                  <span className="text-gray-500 font-medium">Expired</span>
+                )
+              ) : (
+                <span className="text-red-500 font-medium">No Promotion</span>
+              )}
+            </p>
+            <Link to={`/offer-product/${item._id}`}>
+              <button className="mt-3 w-full py-2 bg-yellow-400 hover:bg-yellow-500 rounded-full font-semibold">
+                View Deal
+              </button>
+            </Link>
+          </div>
+        </div>
+      );
+    })
+  )}
+</div>
+
+    </div>
     </div>
   );
 };

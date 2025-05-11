@@ -3,6 +3,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
+import { useSelector } from "react-redux";
 
 const menuData = [
   {
@@ -31,11 +32,64 @@ const menuData = [
             items: [
               { label: "Meet Alexa", path: "/alexa/meet" },
               { label: "Alexa Skills", path: "/alexa/skills" },
+              { label: "Alexa smart home", path: "/alexa/smart-home" },
+              { label: "Amazon prime music", path: "/amazon/music" },
             ],
           },
         ],
       },
-      { label: "Books", path: "/books" },
+      {
+        label :"Fire Tv",
+        submenu:[
+          {category:"Fire Tv",
+            items:[{label:"Amazon prime Video",path:'/amazon/prime-video'},
+              {
+                label:"Fire Tv app games",path:'/fire/app-games'
+              },
+              {
+                label:"see all fire Tv devices",path:'/amazon/prime-video'
+              },
+            ],
+          },
+        ]
+      },
+      {
+        label :"Amazon Prime Video",
+        submenu:[
+          {category:"Amazon Prime Video",
+            items:[{label:"All Video",path:'/amazon/prime-video'},
+              {
+                label:"categories",path:'/fire/app-games'
+              },
+              {
+                label:"My stuff",path:'/amazon/prime-video'
+              },
+            ],
+          },
+        ]
+      },
+      {
+        label :"Amazon Prime Music",
+        submenu:[
+          {category:"Amazon Prime Music",
+            items:[{label:"Amazon Prime Music",path:'amazon/prime-music'},
+              {
+                label:"open web player",path:'fire/app-games'
+              },
+              {
+                label:"voice controlled with Alexa",path:'amazon/prime-video'
+              },
+              {
+                label:"Amazon prime music app",path:'amazon/prime-video'
+              },
+              {
+                label:"CDs and Vinyls",path:'amazon/prime-video'
+              },
+            ],
+          },
+        ]
+      },
+     
     ],
   },
   {
@@ -44,36 +98,80 @@ const menuData = [
       {
         label: "Mobile & Computers",
         submenu: [
-          { label: "Smartphones", path: "/mobiles/smartphones" },
-          { label: "Laptops", path: "/mobiles/laptops" },
-          { label: "Tablets", path: "/mobiles/tablets" },
+          {category:"Mobiles,Tablets & More",
+            items:[
+              { label: "All Mobiles phones", path: "/mobiles/allmobiles" },
+              { label: "All Mobiles Accessories", path: "/allmobiles/allaccessories" },
+              { label: "Cases & Cover", path: "/mobiles/cases-cover" },
+              { label: "Screen Protectors", path: "/mobiles/sreen-protectors" },
+              { label: "Power Banks", path: "/mobiles/powerbank" },
+              { label: "Refurbished & Open box ", path: "/mobiles/refurbished" },
+              { label: "Tablets ", path: "/mobiles/tablets" },
+              { label: "Wearable Devices ", path: "/mobiles/wearables" },
+              { label: "Smart Home ", path: "/mobiles/smarthome" },
+              { label: "Office Supplies & Stationary", path: "/mobiles/office-supplies" },
+              { label: "Softwares", path: "/mobiles/software" },
+              { label: "Smartphones", path: "/mobiles/smartphones" },
+              { label: "Laptops", path: "/mobiles/laptops" },
+              { label: "Tablets", path: "/mobiles/tablets" },
+            ]
+          },
+          {category:"Computers & Accessories",items:[
+            { label: "All Computers & Accessories", path: "/mobiles/tablets" },  
+            { label: "Laptops", path: "/mobiles/tablets" },
+            { label: "  Drives & Storage", path: "/mobiles/tablets" },
+            { label: "Printers & Ink", path: "/mobiles/tablets" },
+            { label: "Networking Devices", path: "/mobiles/tablets" },
+            { label: "Computer Accessories", path: "/mobiles/tablets" },
+            { label: "Game Zone", path: "/mobiles/tablets" },
+            { label: "Monitors", path: "/mobiles/tablets" },
+            { label: "Desktops", path: "/mobiles/tablets" },
+            { label: "Components", path: "/mobiles/tablets" },
+            { label: "All Electronics", path: "/mobiles/tablets" },
+          ]}
+          
         ],
       },
       { label: "Mens Fasions", 
-        submenu:[
+        submenu:[      
+
           {category:"Men,s Clothing",items:[
-            {label:"clothing",path:"/clothing"},
+            {label:"clothing",path:"/mens-clothes"},
             {label:"T-Shirts & Polos",path:"/t-Shirts"},
             {label:"Shirts",path:"/shirts"},
             {label:"Jeans",path:"/jeans"},
+            {label:"Innerwear",path:"/jeans"},
           ]},
           
             {category:"Accessories",items:[
-              {label:"Watchs",path:"/clothing"},
-              {label:"Bags & Luggage",path:"/t-Shirts"},
-              {label:"Sunglasses",path:"/shirts"},
+              {label:"Watches",path:"/watches"},
+              {label:"Bags & Luggage",path:"/bags-luggage"},
+              {label:"Sunglasses",path:"/sunglasses"},
               {label:"Jewellery",path:"/jewellery"},
               {label:"Wallets",path:"/wallets"},
             ]},
-          
-        ]
+            {category:"Men's Shoes",items:[
+              {label:"Shoes",path:"/shoes"},
+              {label:"Sports Shoes",path:"/sports-shoes"},
+              {label:"Formal Shoes",path:"/formal-shoes"},
+              {label:"Casual Shoes",path:"/casual-shoes"},
+            ]},
+            {category:"Stores",items:[
+              {label:"Sportswear",path:"/sportswear"},
+              {label:"The Designer Boutique",path:"/designer-boutique"},
+              {label:"Men's Fashion",path:"/mens-fashion"},
+              {label:"Amazon Fashion",path:"/amazon-fashion"},
+              {label:"Men's Handlooms",path:"/mens-handlooms"},
+              {label:"Fashion Sales & Deals",path:"/fashion-sales"},
+            ]},
+                  ]
        },
       { label: "Women's Fasions",  submenu:[
         {category:"Women,s Clothing",items:[
           {label:"Clothing",path:"/clothing"},
           {label:"Western Wear",path:"/western-Wear"},
-          {label:"Ethic Wear",path:"/shirts"},
-          {label:"Top Brands",path:"/jeans"},
+          {label:"Ethic Wear",path:"/ethic-Wear"},
+          {label:"Top Brands",path:"/women-topbrand"},
         ]},
         
           {category:"Accessories",items:[
@@ -84,7 +182,25 @@ const menuData = [
             {label:"Wallets",path:"/wallets"},
             {label:"Sunglasses",path:"/shirts"},
           ]},
-        
+          {category:"Women's Shoes",items:[
+            {label:"Shoes",path:"/shoes"},
+            {label:"Fashion Sandals",path:"/fashion-sandals"},
+            {label:"Ballerinas",path:"/ballerinas"},
+
+          ]},
+          {category:"Stores",items:[
+            {label:"Handloom & Handicraft Store",path:"/handloom-handicraft"},
+            {label:"Sportswear",path:"/sportswear"},
+            {label:"Women's Fashion",path:"/women-fashion"},
+            {label:"Amazon Fashion",path:"/amazon-fashion"},
+            {label:"Fashion Sales & Deal",path:"/fashion-sales"},
+          ]},
+          {category:"Related Items",items:[
+            {label:"Item 1",path:"/item-1"},
+            {label:"Item 2",path:"/item-2"},
+            {label:"Item 3",path:"/item-3"},
+          ]},
+
       ] },
       { label: "Home & Kitchen", path: "/home-kitchen" },
       { label: "Books", path: "/books" },
@@ -111,6 +227,7 @@ const SidebarMenu = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [submenuTitle, setSubmenuTitle] = useState("");
+  const  {user}  = useSelector((state) => state.auth);
 
   const openSubmenu = (submenu, title) => {
     setActiveSubmenu(submenu);
@@ -152,10 +269,16 @@ const SidebarMenu = () => {
         )}
       >
         {/* Header */}
-        <div className="bg-gray-800 flex justify-between text-white text-lg px-3 py-2">
-          <h2 className="text-lg font-bold">
-            {activeSubmenu ? submenuTitle : "Hello, User"}
-          </h2>
+        <div className="bg-gray-800 flex justify-between text-white text-lg px-3 py-2 ">
+        <h2 className="text-lg font-bold">
+       Hello ,    
+  {activeSubmenu
+    ? submenuTitle
+    : user?.name
+      ? user.name
+      : 'Sign In '}
+</h2>
+
           <button
             className="text-red-500 font-semibold"
             onClick={() => {
@@ -168,7 +291,7 @@ const SidebarMenu = () => {
         </div>
 
         {/* Animated Panels */}
-        <div className="relative h-full w-full p-4 overflow-hidden">
+        <div className="relative h-full w-full p-4 overflow-hidden overflow-y-auto">
           {/* Main Menu Panel */}
           <div
             className={clsx(
@@ -232,10 +355,10 @@ const SidebarMenu = () => {
                   activeSubmenu.map((item, idx) =>
                     item.items ? (
                       <div key={idx}>
-                        <h4 className="text-lg font-bold mx-3   mb-1">
+                        <h4 className="text-lg font-bold mx-3 mb-1  ">
                           {item.category}
                         </h4>
-                        <ul className="ml-3 border-b py-2 space-y-2">
+                        <ul className="ml-3 border-b py-2 space-y-2 ">
                           {item.items.map((subItem, subIdx) => (
                             <li key={subIdx}>
                               <Link

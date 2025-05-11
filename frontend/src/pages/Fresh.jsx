@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { use, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { beauty, groceries, suparSaver } from "../Data/freshProducts";
+import { beauty, grocery, suparSaver } from "../Data/freshProducts";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchGroceries } from "../redux/slice/grocerySlice";
 
 const categories = [
   "Fresh",
@@ -20,7 +22,10 @@ const categories = [
 
 const Fresh = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const scrollRef = useRef();
+  const {groceries} = useSelector((state) => state.grocery);
+
 
   const handleScroll = (direction) => {
     const scrollAmount = 300;
@@ -31,6 +36,17 @@ const Fresh = () => {
       });
     }
   };
+
+  
+ 
+  useEffect(() => {
+    if (groceries) {
+      dispatch(fetchGroceries());
+    }
+    // Handle side effects here
+  }, [groceries, dispatch]);
+
+
 
   return (
     <>
@@ -194,7 +210,7 @@ const Fresh = () => {
   />
   
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-    {groceries.map((item, id) => (
+    {grocery.map((item, id) => (
       <div key={id} className="w-full mx-2">
         <img
           src={item.image}
@@ -273,6 +289,20 @@ const Fresh = () => {
 {/* last  */}
 <div>
   <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/Oct20/UNREC/1500x150_strip.jpg" alt="delivery" />
+</div>
+<div className="flex flex-wrap gap-4 mx-4 mt-4">
+  {groceries.map((item, id) => (
+    <div key={id} onClick={() => navigate(`/grocery/${item._id}`)} className="">
+      <img src={item.images} alt={item.name} className="w-28" />
+      <p className="font-medium">{item.name}</p>
+      <p className="text-sm text-gray-600">{item.description}</p> 
+      <div className="flex justify-between text-sm mt-1">
+        <span className="text-green-600 font-semibold">{item.discount} OFF</span>
+        <span>⭐ {item.rating}</span>
+      </div>
+      <p className="text-lg font-bold text-black mt-1">₹{item.price}</p>
+  </div>
+))}
 </div>
 
     </>
