@@ -107,7 +107,7 @@ const WomenWatches = () => {
               className="flex overflow-x-auto  scrollbar-hide gap-4 px-6 py-4 scroll-smooth"
             >
               {womenWatches.map((watches, index) => (
-                <div key={index} className="text-center flex-shrink-0">
+                <div key={index} className="text-center  flex-shrink-0">
                   <Link to={watches.path}>
                     <img
                       src={watches.image}
