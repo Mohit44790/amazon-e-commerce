@@ -40,6 +40,9 @@ app.use("/api/sales", salesRoutes);
 app.use("/api/giftcards", giftcardsRoutes);
 app.use("/api/grocery", groceryRoutes);
 
-
+export default function handler(req, res) {
+  res.status(200).json({ message: "Hello from backend!" });
+}
+// export const handler = serverless(app);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
