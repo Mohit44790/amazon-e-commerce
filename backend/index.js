@@ -1,7 +1,7 @@
-import express from 'express';
-import dotenv from 'dotenv';
 import cors from 'cors';
-
+import dotenv from 'dotenv';
+import express from 'express';
+import serverless from 'serverless-http';
 import cookieParser from 'cookie-parser';
 import ConnectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
@@ -19,26 +19,11 @@ const app = express();
 dotenv.config();
 ConnectDB();
 
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://amazon-e-commerce-psi.vercel.app'
-];
-
+// ✅ CORS Configuration
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: 'https://amazon-e-commerce-psi.vercel.app',
   credentials: true
 }));
-// ✅ CORS Configuration
-// app.use(cors({
-//     origin: process.env.FRONTEND_URL,
-//     credentials: true, // Enable if you're using cookies or auth headers
-//   }));
 app.use(express.json());
 app.use(express.json());
 app.use(cookieParser()); 
@@ -58,6 +43,6 @@ app.use("/api/grocery", groceryRoutes);
 export default function handler(req, res) {
   res.status(200).json({ message: "Hello from backend!" });
 }
-// export const handler = serverless(app);
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+export const handler = serverless(app);
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
