@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import serverless from 'serverless-http';
+
 import cookieParser from 'cookie-parser';
 import ConnectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
@@ -41,4 +41,5 @@ app.use("/api/giftcards", giftcardsRoutes);
 app.use("/api/grocery", groceryRoutes);
 
 
-export const handler = serverless(app);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
