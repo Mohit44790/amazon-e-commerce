@@ -29,7 +29,7 @@ const Watches = () => {
         useEffect(() => {
           const timer = setTimeout(() => {
             setLoading(false);
-          }, 1500); // simulate 1.5s load time
+          }, 1000); // simulate 1.5s load time
           return () => clearTimeout(timer);
         }, []);
     

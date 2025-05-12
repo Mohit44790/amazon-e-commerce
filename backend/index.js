@@ -19,11 +19,26 @@ const app = express();
 dotenv.config();
 ConnectDB();
 
-// ✅ CORS Configuration
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://amazon-e-commerce-psi.vercel.app'
+];
+
 app.use(cors({
-    origin: "https://amazon-e-commerce-psi.vercel.app/",
-    credentials: true, // Enable if you're using cookies or auth headers
-  }));
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+// ✅ CORS Configuration
+// app.use(cors({
+//     origin: process.env.FRONTEND_URL,
+//     credentials: true, // Enable if you're using cookies or auth headers
+//   }));
 app.use(express.json());
 app.use(express.json());
 app.use(cookieParser()); 
