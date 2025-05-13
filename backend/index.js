@@ -20,7 +20,7 @@ ConnectDB();
 
 // ✅ CORS Configuration
 app.use(cors({
-    origin: "https://amazon-e-commerce-psi.vercel.app",
+    origin: process.env.FRONTEND_URL,
     credentials: true, // Enable if you're using cookies or auth headers
   }));
 app.use(express.json());
