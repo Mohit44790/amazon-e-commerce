@@ -1167,3 +1167,62 @@ export const wristWatches = [
     discount:"40",
   },
 ]
+
+export const categoriesComputers = [
+  {id:117, name: "Accessories", path: "/accessories" },
+  {id:118, name: "Cameras & Photography", path: "/cameras_photography" },
+  {id:119, name: "Car & Vehicle Electronics", path: "/car_vehicle_electronics" },
+  {id:120, name: "Computers & Accessories", path: "/computers_accessories" },
+  {id:121, name: "GPS & Accessories", path: "/gps_accessories" },
+  {id:122, name: "Home Audio", path: "/home_audio" },
+  {id:123, name: "Home Theater, TV & Video", path: "/home_theater_TV_Video" },
+  {id:124, name: "Mobiles & Accessories", path: "/mobiles_accessories" },
+  {id:125, name: "Portable Media Players", path: "/portable_media_players" },
+  {id:126, name: "Radio Communication", path: "/radio_communication" },
+  {id:127, name: "Tablets", path: "/tablets" },
+  {id:128, name: "Telephones & Accessories", path: "/telephones_accessories" },
+  {id:129, name: "Warranties", path: "/warranties" },
+  {id:130, name: "eBook Readers & Accessories", path: "/eBook_Readers_Accessories" },
+  {id:131, name: "Wearable Technology", path: "/wearable_technology" },
+  {id:132, name: "General Purpose Batteries & Battery Chargers", path: "/general_purpose_batteries_battery_chargers" },
+  {id:133, name: "Headphones, Earbuds & Accessories", path: "/headphones_earbuds_accessories" },
+  {id:134, name: "Power Accessories", path: "/power_accessories" },
+];
+
+
+export const categoryslide1 =[
+   {id:135,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/laptop._SS400_QL85_.jpg", name: "Laptops", path: "/laptops" },
+  {id:136,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Headphones._SS400_QL85_.jpg", name: "Headphones", path: "/headphones" },
+  {id:137,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Tablets._SS400_QL85_.jpg", name: "Tablets", path: "/tablets" },
+  {id:138,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Smartwatches._SS400_QL85_.jpg", name: "Smartwatches", path: "/smartwatches" },
+  {id:139,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Monitors._SS400_QL85_.jpg", name: "Monitors", path: "/Monitors" },
+  {id:140,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Desktops._SS400_QL85_.jpg", name: "Desktops", path: "/desktops" },
+  {id:141,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Components._SS400_QL85_.jpg", name: "Components", path: "/components" },
+  {id:142,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Printer._SS400_QL85_.jpg", name: "Printer", path: "/printer" },
+]
+export const categoryslide2 =[
+   {id:142,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Gaming_Laptops._SS400_QL85_.jpg", name: "Gaming Laptops", path: "/Gaming_Laptops" },
+  {id:143,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Camera__Accessories._SS400_QL85_.jpg", name: "Camera Accessories", path: "/Camera__Accessories" },
+  {id:144,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Computer_Accessories._SS400_QL85_.jpg", name: "Computer Accessories", path: "/Computer_Accessories" },
+  {id:145,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/9_audio._CB795899201_.png", name: "Home Audio", path: "/audio" },
+  {id:146,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Stationery._SS400_QL85_.jpg", name: "Stationery", path: "/Stationery" },
+  {id:147,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/musical-instruments._SS400_QL85_.jpg", name: "musical instruments", path: "/musical-instruments" },
+  {id:148,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Storage._SS400_QL85_.jpg", name: "Storage", path: "/Storage" },
+  {id:149,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/ELP_revamp/Networking._SS400_QL85_.jpg", name: "Networking", path: "/Networking" },
+]
+export const categoryslide3 =[
+   {id:150,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Laptop_1._CB796024373_.png", name: "Gaming Laptops", path: "/Gaming_Laptops" },
+  {id:151,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Laptop_2._CB796024373_.png", name: "Camera Accessories", path: "/Camera__Accessories" },
+  {id:152,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Laptop_3._CB796024373_.png", name: "Computer Accessories", path: "/Computer_Accessories" },
+  {id:153,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Laptop_4._CB796024373_.png", name: "Home Audio", path: "/audio" },
+  {id:154,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Laptop_5._CB796024373_.png", name: "Stationery", path: "/Stationery" },
+  {id:155,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Tablet_1._CB796018658_.png", name: "musical instruments", path: "/musical-instruments" },
+  {id:156,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Tablet_2._CB796018658_.png", name: "Storage", path: "/Storage" },
+  {id:157,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Tablet_3._CB796018658_.png", name: "Networking", path: "/Networking" },
+  {id:158,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Tablet_4._CB796018658_.png", name: "Networking", path: "/Networking" },
+  {id:159,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Tablet_5._CB796018658_.png", name: "Networking", path: "/Networking" },
+  {id:160,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio._CB796023642_.png", name: "Networking", path: "/Networking" },
+  {id:161,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-2._CB796023642_.png", name: "Networking", path: "/Networking" },
+  {id:161,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-6._CB796023642_.png", name: "Networking", path: "/Networking" },
+  {id:161,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-4._CB796023642_.png", name: "Networking", path: "/Networking" },
+]

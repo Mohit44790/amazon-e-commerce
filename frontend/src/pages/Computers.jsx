@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { computer } from "../Data/AllTypesAcccessories";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const categories = [
@@ -33,94 +32,101 @@ const Computers = () => {
   };
 
   return (
-    <>
-      <div className="text-sm justify-between px-4 md:px-8">
-        {/* Top Tabs */}
-        <nav className="flex overflow-x-auto gap-2 justify-start whitespace-nowrap pb-2">
-          {categories.map((item, index) => {
-            const path = `/category/${slugify(item)}`;
-            const isActive = currentPath === path;
+    <div className="px-4 md:px-2 py-2">
+      {/* Top Tabs */}
+      <nav className="flex  whitespace-nowrap pb-4 border-b border-gray-200">
+        {categories.map((item, index) => {
+          const path = `/category/${slugify(item)}`;
+          const isActive = currentPath === path;
 
-            return (
-              <NavLink
-                key={index}
-                to={path}
-                className={`px-1 py-2 rounded-full transition text-nowrap ${
-                  isActive
-                    ? "bg-blue-600 text-white"
-                    : "text-gray-800 hover:text-gray-500"
-                }`}
-              >
-                {item}
-              </NavLink>
-            );
-          })}
-        </nav>
-      </div>
+          return (
+            <NavLink
+              key={index}
+              to={path}
+              className={`px-3  rounded-full text-sm transition whitespace-nowrap ${
+                isActive
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-700 hover:text-blue-600"
+              }`}
+            >
+              {item}
+            </NavLink>
+          );
+        })}
+      </nav>
 
-      <div className="flex flex-col lg:flex-row">
+      {/* Layout */}
+      <div className="flex flex-col lg:flex-row gap-4 mt-4">
         {/* Sidebar */}
-        <div className="text-sm mx-4 mt-2 w-full lg:w-60 border-r border-gray-200">
-          <h2 className="font-semibold text-sm mb-2">Category</h2>
-          <p className="mx-2 font-semibold">Computers & Accessories</p>
-          <p className="mx-2">Accessories & Peripherals</p>
-          <p className="mx-2">Components</p>
-          <p className="mx-2">Desktops</p>
-          <p className="mx-2">External Devices & Data Storage</p>
-          <p className="mx-2">Laptops</p>
-          <p className="mx-2">Monitors</p>
-          <p className="mx-2">Networking Devices</p>
-          <p className="mx-2">Printers, Inks & Accessories</p>
-          <p className="mx-2">Scanners</p>
-          <p className="mx-2">Tablets</p>
-          <p className="mx-2">Warranties</p>
-        </div>
+        <aside className="w-full md:w-72 lg:w-60 border-r border-gray-200 pr-4 text-sm">
+          <h2 className="font-semibold mb-2">Category</h2>
+          {[
+            "Computers & Accessories",
+            "Accessories & Peripherals",
+            "Components",
+            "Desktops",
+            "External Devices & Data Storage",
+            "Laptops",
+            "Monitors",
+            "Networking Devices",
+            "Printers, Inks & Accessories",
+            "Scanners",
+            "Tablets",
+            "Warranties",
+          ].map((cat, i) => (
+            <p key={i} className="mx-2 py-1 hover:underline cursor-pointer">
+              {cat}
+            </p>
+          ))}
+        </aside>
 
         {/* Main Content */}
-        <div className="mx-2 mb-2 flex-1">
+        <main className="flex-1 md:w-96">
           <img
             src="https://m.media-amazon.com/images/G/31/img22/pcacc/bau/COMPUTERACC.png"
-            alt="Banner"
-            className="w-full rounded-lg"
+            alt="Computers Banner"
+            className="w-full h-auto rounded-lg mb-4"
           />
 
-          <div className="bg-[#1f1e1e] rounded-xl py-3 mt-4 relative">
-            <h1 className="text-xl text-white mx-4 font-semibold">
-              Deals on gaming accessories
+          <div className="bg-[#1f1e1e] rounded-xl py-3 relative">
+            <h1 className="text-xl text-white font-semibold px-4 mb-2">
+              Deals on Gaming Accessories
             </h1>
 
-            {/* Scroll Buttons */}
+            {/* Scroll Buttons (hidden on small screens) */}
             <button
+              aria-label="Scroll Left"
               onClick={scrollLeft}
-              className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-100  px-2 py-2 rounded-l z-10 shadow-md"
+              className="hidden md:block absolute top-1/2 left-0 -translate-y-1/2 bg-gray-100 p-2 rounded-l z-10 shadow-md"
             >
-              <IoIosArrowBack  size={20}/>
+              <IoIosArrowBack size={20} />
             </button>
             <button
+              aria-label="Scroll Right"
               onClick={scrollRight}
-              className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-100 text-black px-2 py-2 rounded-r z-10 shadow-md"
+              className="hidden md:block absolute top-1/2 right-0 -translate-y-1/2 bg-gray-100 p-2 rounded-r z-10 shadow-md"
             >
               <IoIosArrowForward size={20} />
             </button>
 
-            {/* Scrollable Image Row */}
+            {/* Scrollable Products */}
             <div
-              className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth p-4"
+              className="flex gap-4 overflow-x-auto p-4 scroll-smooth scrollbar-hide"
               ref={scrollRef}
             >
-              {computer.map((items, id) => (
+              {computer.map((item, idx) => (
                 <img
-                  key={id}
-                  src={items.img}
-                  alt={items.name}
+                  key={idx}
+                  src={item.img}
+                  alt={item.name}
                   className="w-60 h-72 object-cover rounded-lg shrink-0"
                 />
               ))}
             </div>
           </div>
-        </div>
+        </main>
       </div>
-    </>
+    </div>
   );
 };
 

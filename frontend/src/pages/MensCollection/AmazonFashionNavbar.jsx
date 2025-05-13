@@ -86,7 +86,7 @@ const AmazonFashionNavbar = () => {
   const [hoveredTab, setHoveredTab] = useState(null);
 
   return (
-    <div className=" relative  z-50">
+    <div className="z-50">
       {/* Top Bar */}
       <div className="flex flex-wrap justify-between items-center text-sm py-3 border-b px-4 md:px-6 bg-white ">
         <h1 className="text-xl md:text-2xl font-semibold mb-2 md:mb-0">Amazon Fashion</h1>

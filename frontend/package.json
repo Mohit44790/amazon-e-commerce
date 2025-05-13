@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    	"build": "vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "host": "vite --host"
@@ -29,9 +29,11 @@
     "react-redux": "^9.2.0",
     "react-router": "^7.5.0",
     "react-router-dom": "^7.5.0",
+    "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5",
     "recharts": "^2.15.3",
     "redux-persist": "^6.0.0",
+    "slick-carousel": "^1.8.1",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
@@ -50,4 +52,3 @@
     "vite": "^6.3.5"
   }
 }
-

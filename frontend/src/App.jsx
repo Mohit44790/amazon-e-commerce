@@ -71,6 +71,8 @@ import Wallets from "./pages/MensCollection/Accessories/Wallets"
 import Shoes from "./pages/MensCollection/Men's Shoes/Shoes"
 import WomenWatches from "./pages/womenCollection/Accessories/WomenWatches"
 import WristWatches from "./pages/womenCollection/Accessories/WristWatches"
+import Electronics from "./pages/Electronics/Electronics"
+import Amazonpay from "./pages/Amazonpay"
 
 
 
@@ -91,6 +93,7 @@ function App() {
         // mobile
         { path:"/mobiles/allmobiles", element:<Mobiles />},
         { path:"/allmobiles/allaccessories", element:<AllMobilesAccessories />},
+        { path:"/amazonpay", element:<Amazonpay />},
         
         { path:"/mobiles/smartphones", element:<SmartphonesPage />},
         { path:"/bestsellers", element:<BestSellers />},
@@ -118,6 +121,8 @@ function App() {
             {path:"/categorys/:slug", element:<CategoryDetails />} ,
             { path: "/user/giftcards", element: <GiftCardList /> },
             { path: "/user/giftcards/redeem", element: <RedeemGiftCard /> },
+            //electronics 
+            {path:"/electronics",element:<Electronics/>},
             // men 
             { path: "/t-Shirts", element: <TShirtsPolos />},  
             { path: "/shirts", element: <Shirts />},  
