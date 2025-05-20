@@ -31,8 +31,8 @@ const WomenTopBrands = () => {
   }, []);
 
   return (
-    <div>
-      <AmazonFashionNavbar />
+    <div className="">
+      <AmazonFashionNavbar  />
       <div className="flex">
         {/* Left Sidebar */}
         <div className="w-72 border-r">

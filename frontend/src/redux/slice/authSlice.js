@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { USER_API_END_POINT } from '../constants/userConstants';
-// import { resetCartState } from './cartSlice';
+
 
 // Login User Thunk
 export const loginUser = createAsyncThunk(

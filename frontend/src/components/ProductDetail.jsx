@@ -6,7 +6,64 @@ import { fetchProductById } from '../redux/slice/productSlice';
 import { addToCart } from '../redux/slice/cartSlice';
 import { toast } from 'react-toastify';
 import ProductReviews from './ProductReviews';
-// import ReactImageMagnify from 'react-image-magnify';
+import ReactImageMagnify from 'react-image-magnify';
+
+// components/ProductDetailSkeleton.jsx
+const ProductDetailSkeleton = () => {
+  const skeletonLine = "bg-gray-200 animate-pulse rounded";
+
+  return (
+    <div className="p-6 mx-auto bg-white rounded shadow">
+      {/* Title */}
+      <div className={`${skeletonLine} h-8 w-2/3 mb-6`}></div>
+
+      <div className="flex flex-col sm:flex-row gap-8">
+        {/* Thumbnails */}
+        <div className="flex flex-col gap-2">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className={`${skeletonLine} w-16 h-20`}></div>
+          ))}
+        </div>
+
+        {/* Main Image */}
+        <div className={`${skeletonLine} w-[400px] h-[500px]`}></div>
+
+        {/* Product Info */}
+        <div className="border p-4 rounded-md shadow bg-gray-50 space-y-2 text-sm w-full">
+          {[...Array(7)].map((_, i) => (
+            <div key={i} className={`${skeletonLine} h-4 w-3/4`}></div>
+          ))}
+          <ul className="ml-5 mt-4 space-y-2">
+            {[...Array(4)].map((_, i) => (
+              <li key={i} className={`${skeletonLine} h-3 w-5/6`}></li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Buy Section */}
+        <div className="border p-4 w-72 rounded-md shadow space-y-3 text-sm">
+          <div className={`${skeletonLine} h-6 w-1/2`}></div>
+          {[...Array(7)].map((_, i) => (
+            <div key={i} className={`${skeletonLine} h-3 w-full`}></div>
+          ))}
+          <div className="border-t pt-2 space-y-2">
+            <div className={`${skeletonLine} h-8 w-full rounded-full`}></div>
+            <div className={`${skeletonLine} h-8 w-full rounded-full`}></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Other Sellers */}
+      <div className="mt-6">
+        <div className={`${skeletonLine} h-4 w-1/2`}></div>
+      </div>
+    </div>
+  );
+};
+
+
+
+
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -14,7 +71,12 @@ const ProductDetail = () => {
   const { user } = useSelector((state) => state.auth);
 
   const [selectedImage, setSelectedImage] = useState(null);
+//  const [loading, setLoading] = useState(true);
 
+//   useEffect(() => {
+//     const timer = setTimeout(() => setLoading(false), 1000);
+//     return () => clearTimeout(timer);
+//   }, []);
   useEffect(() => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]);
@@ -49,7 +111,7 @@ const ProductDetail = () => {
   };
  
 
-  if (loading) return <p className="text-center py-4">Loading product...</p>;
+  if (loading) return <p className="text-center py-4"><ProductDetailSkeleton /></p>;
   if (error) return <p className="text-red-500 text-center py-4">{error}</p>;
   if (!product) return <p className="text-center text-red-500 mt-10">Product not found</p>;
 
@@ -85,16 +147,16 @@ const ProductDetail = () => {
           </div>
 
           {/* Main Image */}
-          <div className="flex flex-col h-full items-center gap-2">
+          {/* <div className="flex flex-col h-full items-center gap-2">
             <img
               src={selectedImage || product?.images?.[0]}
               onError={(e) => e.target.src = "/placeholder.jpg"}
               alt="Selected"
               className="w-96 h-full object-cover border rounded"
             />
-          </div>
+          </div> */}
           {/* Main Image with Zoom */}
-{/* <div className="flex flex-col h-full items-center gap-2 w-[400px]">
+<div className="flex flex-col h-full items-center gap-2 w-[400px]">
   <ReactImageMagnify
     {...{
       smallImage: {
@@ -120,7 +182,7 @@ const ProductDetail = () => {
       shouldUsePositiveSpaceLens: true,
     }}
   />
-</div> */}
+</div>
 
 
           {/* Product Info */}

@@ -1,7 +1,7 @@
 import Product from "../model/Product.js";
 import User from "../model/User.js";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+  import bcrypt from "bcryptjs";
+  import jwt from "jsonwebtoken";
 import { uploadToCloudinaryDirect } from "../middlewares/cloudinaryMiddleware.js";
 
 export const registerUser = async (req, res) => {

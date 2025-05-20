@@ -182,11 +182,11 @@ const Navbar = () => {
       {showMenu && (
         <div className="absolute z-50 bg-white text-black w-[400px] shadow-lg p-4 top-10 right-0 -left-40 border border-gray-200 rounded-md">
           <MdArrowDropUp size={28} className='relative -top-8 left-60  text-white' />
-          <div className="border-b bg-blue-100 py-1  px-2 text-center rounded-lg flex justify-between  mb-2">
+          <div className="border-b bg-blue-100 py-1   px-2 text-center rounded-lg flex justify-between  mb-2">
             <p>Who is Shopping? {user?.name ? user.name : 'Select a Profile'}</p>
             <button className="text-blue-600 font-semibold flex items-center">Manage Profiles <IoIosArrowForward /></button>
           </div>
-          <div className="flex justify-between text-sm">
+          <div className="flex justify-between  text-sm">
             {/* Your Lists */}
             <div>
               <h3 className="font-bold mb-2">Your Lists</h3>

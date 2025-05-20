@@ -25,7 +25,9 @@ const CartSidebar = forwardRef((props, ref) => {
   return (
     <div
       ref={ref}
-      className={`fixed top-0 right-0 min-h-screen w-96 text-black bg-white shadow-lg z-50 transform transition-transform ${isCartOpen ? 'translate-x-0' : 'translate-x-full'}`}
+     className={`fixed top-0 right-0 min-h-screen w-96 text-black bg-white shadow-lg z-50 transform transition-transform ${isCartOpen ? 'translate-x-0' : 'translate-x-full'}`}
+
+
     >
       <div className="flex justify-between p-4 border-b">
         <h2 className="text-xl font-bold">Your Cart</h2>

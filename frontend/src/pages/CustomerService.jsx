@@ -15,7 +15,7 @@ const CustomerService = () => {
       </div>
       <img src="https://m.media-amazon.com/images/G/31/x-locale/cs/help/images/gateway/Box-t3.png" alt="" />
 
-      <div className="a-row a-spacing-large a-spacing-top-micro ss-rich-card-row">
+      <div className="a-row a-spacing-large a-spacing-top-micro ss-rich-card-row flex gap-8">
         {/* Your Orders */}
        <img src="https://m.media-amazon.com/images/G/31/x-locale/cs/help/images/gateway/returns-box-blue.png" alt="" />
 <img src="https://m.media-amazon.com/images/G/31/x-locale/cs/help/images/gateway/manage-address.png" alt="" />
@@ -23,7 +23,7 @@ const CustomerService = () => {
         <img src="https://m.media-amazon.com/images/G/31/x-locale/cs/help/images/gateway/Prime_clear-bg.png" alt="" />
       </div>
 
-      <div className="a-row a-spacing-large a-spacing-top-micro ss-rich-card-row">
+      <div className="a-row a-spacing-large a-spacing-top-micro ss-rich-card-row flex">
         
 <img src="https://m.media-amazon.com/images/G/31/x-locale/cs/help/images/gateway/Payments_clear-bg-t3.png" alt="" />
         {/* Payment Settings */}

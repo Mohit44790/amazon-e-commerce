@@ -90,7 +90,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative z-50">
       {/* Search Bar */}
       <div className="flex w-full bg-white rounded border border-gray-300 overflow-hidden">
         <div className="flex items-center px-3 bg-gray-100 text-black">

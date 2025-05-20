@@ -72,18 +72,18 @@ const menuData = [
         label :"Amazon Prime Music",
         submenu:[
           {category:"Amazon Prime Music",
-            items:[{label:"Amazon Prime Music",path:'amazon/prime-music'},
+            items:[{label:"Amazon Prime Music",path:'/amazon/prime-music'},
               {
                 label:"open web player",path:'fire/app-games'
               },
               {
-                label:"voice controlled with Alexa",path:'amazon/prime-video'
+                label:"voice controlled with Alexa",path:'/amazon/prime-video'
               },
               {
-                label:"Amazon prime music app",path:'amazon/prime-video'
+                label:"Amazon prime music app",path:'/amazon/prime-video'
               },
               {
-                label:"CDs and Vinyls",path:'amazon/prime-video'
+                label:"CDs and Vinyls",path:'/amazon/prime-video'
               },
             ],
           },
@@ -252,7 +252,7 @@ const SidebarMenu = () => {
       {/* Overlay */}
       <div
         className={clsx(
-          "fixed inset-0 bg-black bg-opacity-30 z-40 transition-opacity duration-300",
+          "fixed inset-0 bg-black bg-opacity-30 z-40  transition-opacity duration-300",
           isSidebarOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
         onClick={() => {
@@ -264,7 +264,7 @@ const SidebarMenu = () => {
       {/* Sidebar Wrapper */}
       <div
         className={clsx(
-          "fixed top-0 left-0 h-full w-80 bg-white  text-black shadow-md z-50  overflow-y-auto transition-transform duration-300",
+          "fixed top-0 left-0 h-full w-80 bg-white   text-black shadow-md z-50  overflow-y-auto transition-transform duration-300",
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
