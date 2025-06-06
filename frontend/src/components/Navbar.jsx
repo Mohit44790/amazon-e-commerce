@@ -3,7 +3,7 @@ import { CiLocationOn, CiSearch } from "react-icons/ci";
 import { LiaCartArrowDownSolid } from "react-icons/lia";
 import { IoIosArrowDown, IoIosArrowForward, IoIosArrowUp, IoMdArrowDropdown } from "react-icons/io";
 
-import { allProducts, electronics, electronicsItems, products } from '../Data/DataProduct';
+// import { allProducts, electronics, electronicsItems, products } from '../Data/DataProduct';
 import { Link, useNavigate } from 'react-router-dom';
 
 // import { useCart } from '../context/CartContext';
@@ -34,6 +34,9 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [showMenu,setShowMenu] =useState(false);
   const dispatch = useDispatch();
+  const [checkAddress,setCheckAddress] = useState(false)
+  const { addresses } = useSelector((state) => state.address);
+  const defaultAddress = addresses?.[0];
   // const userInfo = useSelector((state) => state.userInfo);
   const  {user}  = useSelector((state) => state.auth);
   const cartItems = useSelector((state) => state.cart.items);
@@ -108,13 +111,21 @@ const Navbar = () => {
 
         {/* Location */}
         <div className="hidden sm:flex flex-col justify-center items-start text-sm">
-          <p>{t("deliveryToDelhi")}</p>
-          {/* <p>{t("deliveryToDelhi")}</p> */}
-          <div className="flex items-center gap-1">
-            <CiLocationOn size={20} />
-            <span className="font-bold">{t("updateLocation")}</span>
-          </div>
+        <p>
+          {user && defaultAddress
+            ? `Deliver to ${defaultAddress.fullName}`
+            : "Delivery to India"}
+        </p>
+        <div className="flex items-center gap-1">
+          <CiLocationOn size={20} />
+          <span
+            className="font-bold cursor-pointer"
+            onClick={() => setCheckAddress(true)}
+          >
+            {user && defaultAddress ? `${defaultAddress.addressLine} ${defaultAddress.pincode}` : "Update Location"}
+          </span>
         </div>
+      </div>
 
         {/* Search bar */}
         <div className="w-full sm:flex sm:flex-grow sm:max-w-2xl">
@@ -212,11 +223,18 @@ const Navbar = () => {
     </Link>
   </li>
 )}
+     {user?.role === "seller" && (
+  <li>
+    <Link to="/seller/dashboard">
+      <button className="btn-admin text-blue-500">Seller Dashboard</button>
+    </Link>
+  </li>
+)}
 
 {/* {console.log(user?.role)} {/* Add this to check the role */}
 {/* {user?.role === "admin" ? AdminDashboard : "Not Admin"} */} 
-
-                <li>Your Orders</li>
+<Link to={"/my-orders"} ><li>Your Orders</li></Link>
+                
                 <li>Your Wish List</li>
                 <li>Your Recommendations</li>
                 <li>Prime Membership</li>
@@ -257,7 +275,45 @@ const Navbar = () => {
       </div>
     </div>
     
-  
+    {/* Modal for Non-Logged-In Users */}
+      {checkAddress && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg w-full max-w-md relative">
+            <button
+              onClick={() => setCheckAddress(false)}
+              className="absolute top-2 right-2 text-lg font-bold"
+            >
+              ×
+            </button>
+            <h1 className="text-lg font-semibold mb-2">Choose your location</h1>
+            <p className="text-sm text-gray-700 mb-4">
+              Select a delivery location to see product availability and delivery options
+            </p>
+          {user && defaultAddress
+            ? (<div><p className='border mb-2 mx-2 p-2 rounded-lg' >{`${defaultAddress.fullName} ${defaultAddress.addressLine} ${defaultAddress.pincode} ${defaultAddress.landmark} ${defaultAddress.state} ${defaultAddress.city}`}</p>
+            <Link to={"/addresses"} className='text-blue-500 text-sm'>Add an address or pick-up point</Link>
+            
+            </div>)
+            :( <Link to={"/signin"}> <button className="bg-yellow-400 w-full py-2 text-sm rounded mb-3">
+              Sign in to see your addresses
+            </button></Link>)}
+          
+            <div className="text-center text-xs mb-2 text-gray-600">
+              — or enter an Indian pincode —
+            </div>
+            <div className="flex gap-2">
+              <input
+                type="search"
+                placeholder="Enter Pincode"
+                className="border px-3 py-1 rounded w-full text-sm"
+              />
+              <button className="bg-blue-600 text-white px-4 rounded text-sm">
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

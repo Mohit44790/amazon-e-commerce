@@ -5,7 +5,7 @@ export const mockProducts = [
         "category": "Baby",
         "brand": "superminis",
         "description": "Dot Print Cotton Bedding Set with Mosquito Net and Head Pillow",
-        "color": "Pink",
+        "colors": "Pink",
         "price": 399,
         "discount": "70%",
         "image": [
@@ -18,7 +18,7 @@ export const mockProducts = [
         "category": "Bags, Wallets and Luggage",
         "brand": "Ben Martin",
         "description": "Wildcraft Canopus Hard Trolley (Charcoal)",
-        "color": "Pink",
+        "colors": "Pink",
         "price": 399,
         "discount": "70%",
         "image": [
@@ -31,7 +31,7 @@ export const mockProducts = [
         "category": "Beauty",
         "brand": "Amazon Brand - Symbol",
         "description": "Dream Beauty Fashion Cotton Top",
-        "color": "Pink",
+        "colors": "Pink",
         "price": 399,
         "discount": "70%",
         "image": [
@@ -44,7 +44,7 @@ export const mockProducts = [
         "category": "Car & Motorbike",
         "brand": "CarZone",
         "description": "Car Sun Shade Windshield Cover, Umbrella Windshield Sun Shade for Car Front Window，Sun Protection & Heat Insulation Foldable Sun Shade，Full Cover Shade Say Dragon 3 - Toothless (Standard)",
-        "color": "Purple",
+        "colors": "Purple",
         "price": 555,
         "discount": "60%",
         "image": [
@@ -57,7 +57,7 @@ export const mockProducts = [
         "category": "Clothing & Accessories",
         "brand": "Van Heusen",
         "description": "Formal slim fit shirt in pink",
-        "color": "Pink",
+        "colors": "Pink",
         "price": 399,
         "discount": "70%",
         "image": [
@@ -70,7 +70,7 @@ export const mockProducts = [
         "category": "Clothing & Accessories",
         "brand": "Viscose",
         "description": "Formal slim fit shirt in pink",
-        "color": "Maroon",
+        "colors": "Maroon",
         "price": 399,
         "discount": "70%",
         "image": [
@@ -83,7 +83,7 @@ export const mockProducts = [
         "category": "Computers & Accessories",
         "brand": "Logitech",
         "description": "Logitech M221 Wireless Silent Mouse, 2.4GHz with USB Nano Receiver",
-        "color": "Black",
+        "colors": "Black",
         "price": 699,
         "discount": "50%",
         "image": [
@@ -96,7 +96,7 @@ export const mockProducts = [
         "category": "Electronics",
         "brand": "boAt",
         "description": "boAt Rockerz 255 Pro+ Wireless Earphones with ASAP Charge",
-        "color": "Red",
+        "colors": "Red",
         "price": 1299,
         "discount": "40%",
         "image": [
@@ -109,7 +109,7 @@ export const mockProducts = [
         "category": "Fashion",
         "brand": "Lymio",
         "description": "Casual round neck cotton t-shirt",
-        "color": "Blue",
+        "colors": "Blue",
         "price": 299,
         "discount": "65%",
         "image": [
@@ -122,7 +122,7 @@ export const mockProducts = [
         "category": "Health & Personal Care",
         "brand": "Colgate",
         "description": "Colgate ZigZag Charcoal Soft Bristles Toothbrush Pack",
-        "color": "Black",
+        "colors": "Black",
         "price": 149,
         "discount": "25%",
         "image": [
@@ -135,7 +135,7 @@ export const mockProducts = [
         "category": "Home & Kitchen",
         "brand": "Amazon Brand",
         "description": "Carousel spice rack with 16 jars",
-        "color": "White",
+        "colors": "White",
         "price": 899,
         "discount": "30%",
         "image": [
@@ -148,7 +148,7 @@ export const mockProducts = [
         "category": "Home Improvement",
         "brand": "Philips",
         "description": "9W LED Bulb with B22 base",
-        "color": "White",
+        "colors": "White",
         "price": 99,
         "discount": "50%",
         "image": [
@@ -161,7 +161,7 @@ export const mockProducts = [
         "category": "Industrial & Scientific",
         "brand": "PreciseTech",
         "description": "6-inch digital Vernier caliper",
-        "color": "Black",
+        "colors": "Black",
         "price": 1199,
         "discount": "15%",
         "image": [
@@ -174,7 +174,7 @@ export const mockProducts = [
         "category": "Jewellery",
         "brand": "Tanishq",
         "description": "Sterling silver floral ring for women",
-        "color": "Silver",
+        "colors": "Silver",
         "price": 1599,
         "discount": "20%",
         "image": [
@@ -187,7 +187,7 @@ export const mockProducts = [
         "category": "Musical Instruments",
         "brand": "Kadence",
         "description": "Kadence Concert Ukulele 24 inch with bag",
-        "color": "Brown",
+        "colors": "Brown",
         "price": 2999,
         "discount": "35%",
         "image": [
@@ -200,7 +200,7 @@ export const mockProducts = [
         "category": "Office Products",
         "brand": "Cello",
         "description": "Mesh metal office desk organizer tray",
-        "color": "Black",
+        "colors": "Black",
         "price": 349,
         "discount": "45%",
         "image": [
@@ -213,7 +213,7 @@ export const mockProducts = [
         "category": "Outdoor Living",
         "brand": "Quechua",
         "description": "2 person waterproof camping tent",
-        "color": "Green",
+        "colors": "Green",
         "price": 2499,
         "discount": "25%",
         "image": [
@@ -226,7 +226,7 @@ export const mockProducts = [
         "category": "Pet Supplies",
         "brand": "Petsy",
         "description": "Adjustable heavy-duty dog leash",
-        "color": "Red",
+        "colors": "Red",
         "price": 199,
         "discount": "20%",
         "image": [
@@ -239,7 +239,7 @@ export const mockProducts = [
         "category": "Shoes & Handbags",
         "brand": "Alvami",
         "description": "Comfortable running shoes for men",
-        "color": "Pink",
+        "colors": "Pink",
         "price": 399,
         "discount": "70%",
         "image": []
@@ -250,7 +250,7 @@ export const mockProducts = [
         "category": "Sports, Fitness & Outdoors",
         "brand": "Strauss",
         "description": "Adjustable skipping rope for cardio workout",
-        "color": "Black",
+        "colors": "Black",
         "price": 149,
         "discount": "35%",
         "image": [
@@ -263,7 +263,7 @@ export const mockProducts = [
         "category": "Toys & Games",
         "brand": "Rangnavi",
         "description": "Mini racing car for kids age 3+",
-        "color": "Pink",
+        "colors": "Pink",
         "price": 399,
         "discount": "70%",
         "image": [
@@ -276,7 +276,7 @@ export const mockProducts = [
         "category": "Watches",
         "brand": "Lux Cozi",
         "description": "Analog wrist watch for men",
-        "color": "Pink",
+        "colors": "Pink",
         "price": 399,
         "discount": "70%",
         "image": []
@@ -616,42 +616,52 @@ export const fashionCategories = [
   {
     label: "Kurtas & Sets",
     img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Salwarsuits._SS400_QL85_FMpng_.png",
+    path:"/women/ethnic-wear/kurtas"
   },
   {
     label: "Top & tees",
     img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Tops__Tees._SS400_QL85_FMpng_.png",
+    path:"/women/western-wear/top_tees"
   },
   {
     label: "Saree",
     img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Sarees._SS400_QL85_FMpng_.png",
+    path:"/women/ethnic-wear/sarees"
   },
   {
     label: "Active Wears",
     img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Activewear._SS400_QL85_FMpng_.png",
+    path:"/women/ethnic-wear/kurtas"
   },
   {
     label: "sleepWear",
     img: "https://m.media-amazon.com/images/G/31/img23/WA/december/p0-halo/without/Sleepwear._SS400_QL85_FMpng_.png",
+    path:"/women/ethnic-wear/kurtas"
   },
   {
     label: "Jewellery",
     img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/jewellery._SS300_QL85_FMpng_.png",
+    path:"/wfashion_silver_jewellery"
   },
   {
     label: "Watches",
     img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/watches._SS300_QL85_FMpng_.png",
+    path:"/wfashion_watches"
   },
   {
     label: "Beauty",
     img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/beauty._SS300_QL85_FMpng_.png",
+    path:"/women/ethnic-wear/kurtas"
   },
   {
     label: "handBags",
     img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Halos/handbags._SS300_QL85_FMpng_.png",
+    path:"/w-handbages_cluthes"
   },
   {
     label: "Sungalles & Frames",
     img: "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/3.0/Halos/eyewear._SS300_QL85_FMpng_.png",
+    path:"/sunglasses"
   },
  ]     
 
@@ -983,25 +993,25 @@ export const womenEthicWear =[
   {
     id:1,
     image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Kurtas__Kurtis._SS400_QL85_FMpng_.png",
-    path:"/kurtas-Kurtis",
+    path:"/women/ethnic-wear/kurtas",
     label:"Kurtas-kurtis"
   },
   {
     id:2,
     image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Salwar_Suits._SS400_QL85_FMpng_.png",
-    path:"/salwar-Suits",
+    path:"/women/ethnic-wear/salwar",
     label:"Salwar-suits"
   },
   {
     id:3,
     image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Ethnic_Bottoms._SS400_QL85_FMpng_.png",
-    path:"/ethics_bottom",
+    path:"/women/ethnic-wear/bottom-wear",
     label:"Ethics-bottom"
   },
   {
     id:4,
     image:"https://m.media-amazon.com/images/G/31/img23/WA/2025/april/ss-flip/kurta/halo/without/Lehengas._SS400_QL85_FMpng_.png",
-    path:"/lehengas",
+    path:"/women/ethnic-wear/lehenga",
     label:"Lehengas"
   },
   {
@@ -1223,6 +1233,388 @@ export const categoryslide3 =[
   {id:159,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Tablet_5._CB796018658_.png", name: "Networking", path: "/Networking" },
   {id:160,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio._CB796023642_.png", name: "Networking", path: "/Networking" },
   {id:161,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-2._CB796023642_.png", name: "Networking", path: "/Networking" },
-  {id:161,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-6._CB796023642_.png", name: "Networking", path: "/Networking" },
-  {id:161,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-4._CB796023642_.png", name: "Networking", path: "/Networking" },
+  {id:162,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-6._CB796023642_.png", name: "Networking", path: "/Networking" },
+  {id:163,image:"https://m.media-amazon.com/images/G/31/IMG24/Smart_Watches/MSD_APRIL/Audio-4._CB796023642_.png", name: "Networking", path: "/Networking" },
 ]
+
+export const sliverJwellery =[
+  {
+    id:164,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/May/MayART/Cat_page/Halos/Jewellery-5._SS400_QL85_FMpng_.png",
+    path:"/everydayfine"
+  },
+  {
+    id:165,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/May/MayART/Cat_page/Halos/Jewellery-4._SS400_QL85_FMpng_.png",
+    path:"/gold_coin"
+  },
+  {
+    id:166,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/May/MayART/Cat_page/Halos/Jewellery-3._SS400_QL85_FMpng_.png",
+    path:"/men-jewellery"
+  },
+  {
+    id:167,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/May/MayART/Cat_page/Halos/Jewellery-2._SS400_QL85_FMpng_.png",
+    path:"/Luxe_store"
+  },
+]
+
+export const fashionJewellery =[
+  {
+    id:168,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Headers/Top_hero_PC-7._SX3000_QL85_.jpg",
+  },
+  {
+    id:169,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Headers/FJ_BxGy_2_3000x1000._SX3000_QL85_FMpng_.png",
+  },
+  {
+    id:170,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Headers/Top_hero_PC-5._SX3000_QL85_.jpg",
+  },
+  {
+    id:171,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2025/GenZ/Cat_Page/Earring_jewellery_sets_n_more_1500x460._CB548284948_.png",
+  },
+  {
+    id:172,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Headers/Top_hero_PC._SX3000_QL85_.jpg",
+  },
+  {
+    id:173,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Headers/Top_hero_PC-6._SX3000_QL85_.jpg",
+  },
+]
+
+export const fashionstyle =[
+  {
+    id:174,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Passpoert_to_style/Herotator_PC._SX3000_QL85_.jpg",
+  },
+  {
+    id:175,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Passpoert_to_style/Herotator_PC-1._SX3000_QL85_.jpg",
+  },
+  {
+    id:176,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Passpoert_to_style/Herotator_PC-2._SX3000_QL85_.jpg",
+  },
+  {
+    id:177,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Passpoert_to_style/Herotator_PC-4._SX3000_QL85_.jpg",
+  },
+  {
+    id:178,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Headers/Top_hero_PC._SX3000_QL85_.jpg",
+  },
+  {
+    id:179,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Passpoert_to_style/Herotator_PC-3._SX3000_QL85_.jpg",
+  },
+]
+
+export const brandFocusJewellery =[
+ {
+    id:180,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Coop/Voylla_3_978x1432._SS800_QL85_FMpng_.png",
+  },
+ {
+    id:181,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Coop/GIVA_new_2_978x1432._SS800_QL85_FMpng_.png",
+  },
+ {
+    id:182,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Coop/Zeneme_2_978x1432._SS800_QL85_FMpng_.png",
+  },
+ {
+    id:183,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Coop/Karatkart_2_978x1432._SS800_QL85_FMpng_.png",
+  },
+ {
+    id:184,
+    img:"https://m.media-amazon.com/images/G/31/img21/Jewellery/2024/SS_24/Cat_page/FJ/Coop/Sri_Jagdamba_pearls_FJ_978x1432._SS800_QL85_FMpng_.png",
+  },
+]
+
+
+export const SunglassesMen =[
+  {
+    id:185,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyeWearBAU/Halo/Halo-Square._SS400_QL85_FMpng_.png",
+    path:"/square"
+  },
+  {
+    id:186,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyeWearBAU/Halo/Halo-Oversized._SS400_QL85_FMpng_.png",
+    path:"/Halo-Oversized"
+  },
+  {
+    id:187,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyeWearBAU/Halo/Halo-Cateye._SS400_QL85_FMpng_.png",
+    path:"/Halo-Cateye"
+  },
+  {
+    id:188,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyeWearBAU/Halo/Halo-Rectangular._SS400_QL85_FMpng_.png",
+    path:"/Halo-Rectangular"
+  },
+  {
+    id:189,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyeWearBAU/Halo/Halo-Butterfly._SS400_QL85_FMpng_.png",
+    path:"/Halo-Butterfly"
+  },
+]
+
+export const SunglassesBrands= [
+  {
+    id:190,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyewearUBS/topbrands/Shop_Top_Brands-Vincent_Chase.png",
+    path:"/Brands-Vincent_Chase"
+  },
+  {
+    id:191,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyewearUBS/topbrands/Shop_Top_Brands-Vincent_Chase-1.png",
+    path:"/Brands-Vincent_Chase"
+  },
+  {
+    id:192,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyewearUBS/ShopTopBrands-Fastrack.png",
+    path:"/Brands-Fastrack"
+  },
+  {
+    id:193,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyewearUBS/topbrands/Shop_Top_Brands-Voyage.png",
+    path:"/Brands-Voyage"
+  },
+  {
+    id:194,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyewearUBS/topbrands/Shop_Top_Brands-Rayban.png",
+    path:"/Brands-Rayban"
+  },
+  {
+    id:195,
+    img:"https://m.media-amazon.com/images/G/31/img22/Meghana/EyewearUBS/topbrands/Shop_Top_Brands-Tommy_Hilfiger.png",
+    path:"/Brands-Tommy_Hilfiger"
+  },
+]
+
+export const overallsFashion = [
+  {
+    id: 196,
+    image: ["https://m.media-amazon.com/images/I/41oBOG3bZ9L._SY679_.jpg"],
+    description: "ANAISA Women Cotton Embroidery Top with Trouser Co-ord Set",
+    brand: "ANAISA",
+    category: "Overalls",
+    colors: "LimeGreen, Maroon, Red, Blue",
+    price: 899,
+    MRP: 4000,
+    sizes: ["S", "M", "L", "XL"],
+    discount: 78,
+  },
+  {
+    id: 197,
+    image: ["https://m.media-amazon.com/images/I/712QZszyZ4L._SY741_.jpg"],
+    description: "Kashmir Hunar Aari embroidered long rayon Kaftan",
+    brand: "Generic",
+    category: "Overalls",
+    colors: "Yellow, Maroon, Red, Blue",
+    price: 899,
+    MRP: 4000,
+    sizes: ["S", "M", "L", "XL"],
+    discount: 78,
+  },
+  {
+    id: 198,
+    image: ["https://m.media-amazon.com/images/I/61GJSADDWoL._SX679_.jpg"],
+    description: "PANIT Women's Solid dungarees with side stripes",
+    brand: "Generic",
+    category: "Overalls",
+    colors: "Yellow, Maroon, Red, Blue",
+    price: 899,
+    MRP: 4000,
+    sizes: ["S", "M", "XL", "2XL","3XL"],
+    discount: 78,
+  },
+  {
+    id:199,
+    image: ["https://m.media-amazon.com/images/I/31PeBg7LkBL.jpg"],
+    description: "HI-FASHION Round Neck Embroidered Denim Top Women",
+    brand: "HI-FASHION",
+    category: "Overalls",
+    colors: "Yellow, Maroon, Red, Blue",
+    price: 899,
+    MRP: 4000,
+    sizes: ["XS","S", "M", "L", "XL","free"],
+    discount: 78,
+  },
+  {
+    id:200,
+    image:[ "https://m.media-amazon.com/images/I/41n4q6yjx3L._SY679_.jpg"],
+    description: "ANAISA Women Cotton Embroidery Top with Trouser Co-ord Set",
+    brand: "ANAISA",
+    category: "Overalls",
+    colors: "Pink",
+    price: 899,
+    MRP: 4000,
+    sizes: [,"S", "M"],
+    discount: 78,
+  },
+];
+
+export const MostLovedStyles = [
+  {
+    id: 201,
+    image: "https://m.media-amazon.com/images/I/6124nldYSZL._SY741_.jpg",
+    description: "Libas Women Embroidered Cotton Straight Kurta & Palazzo With Dupatta",
+    brand: "Libas",
+    category: "kurta&Set",
+    colors: "LimeGreen, Maroon, Red, Blue ,White",
+    price: 1979,
+    MRP: 4999,
+    sizes: ["S", "M", "L", "XL"],
+    discount: 60,
+     rating: 5
+  },
+  {
+    id: 202,
+    image: "https://m.media-amazon.com/images/I/61+K9GgU6LL._SY741_.jpg",
+    description: "The Souled Store Women's and Girls Full Sleeve Collared Neck Button Down Stripes Cotton Boyfriend Fit Shirts",
+    brand: "The Souled Store",
+    category: "tops&tees",
+    colors: "Yellow, Maroon, Red, Blue",
+    price: 1200,
+    MRP: 1699,
+    sizes: ["S", "M", "L", "XL"],
+    discount: 24,
+     rating: 3.2
+  },
+  {
+    id: 203,
+    image: "https://m.media-amazon.com/images/I/71NyBBxEriL._SY741_.jpg",
+    description: "AKHILAM Women's Botanical Embroidered Designer Organza Saree With Unstitched Blouse Piece (7KAVI701)",
+    brand: "AKHILAM",
+    category: "Saree",
+    colors: "Yellow, Maroon, Red,Pink",
+    price: 899,
+    MRP: 4000,
+    sizes: ["S", "M", "XL", "2XL","3XL"],
+    discount: 78,
+     rating: 4.2
+  },
+  {
+    id:204,
+    image: "https://m.media-amazon.com/images/I/61qEfgH1cNL._SX679_.jpg",
+    description: "Madame Women's Polyester M2W13278 Midi Dress",
+    brand: "Madame",
+    category: "Dresses",
+    colors: "Yellow, Maroon, Red, Blue",
+    price: 899,
+    MRP: 4000,
+    sizes: ["XS","S", "M", "L", "XL","free"],
+    discount: 78,
+     rating: 4.2
+  },
+  {
+    id:205,
+    image: "https://m.media-amazon.com/images/I/71lgudLba6L._SX679_.jpg",
+    description: "Reebok Women's Nylon Padded Wire Free Sports Bra",
+    brand: "Reebok",
+    category: "activewears",
+    colors: "Pink",
+    price: 899,
+    MRP: 4000,
+    sizes: [,"S", "M"],
+    discount: 78,
+     rating: 4.2
+  },
+  {
+    id:206,
+    image: "https://m.media-amazon.com/images/I/71jk3J8rAZL._SY741_.jpg",
+    description: "W for Woman Solid Straight Kurta Sets With Slim Pants & Dupatta",
+    brand: "W for Woman",
+    category: "kurta&Set",
+    colors: "Pink",
+    price: 899,
+    MRP: 4000,
+    sizes: [,"S", "M"],
+    discount: 78,
+     rating: 4.2
+  },
+   {
+    id: 207,
+    image: "https://m.media-amazon.com/images/I/619JJpAvxHL._SX569_.jpg",
+    description: "U.S. POLO ASSN. Women's Cotton Relaxed Fit T-Shirt",
+    brand: "U.S. POLO ASSN",
+    category: "tops&tees",
+    colors: "Yellow, Maroon, Red, Blue",
+    price: 1367,
+    MRP: 1699,
+    sizes: ["S", "M", "L", "XL"],
+    discount: 24,
+     rating: 4.2
+  },
+   {
+    id: 208,
+    image: "https://m.media-amazon.com/images/I/618kLadoz0L._SY741_.jpg",
+    description: "Womanista Women's Women Net Saree ll Women Embroidered saree ll Women Orange saree ll Un-stitched blouse saree",
+    brand: "Womanista",
+    category: "Saree",
+    colors: "Yellow, Maroon, Red,Orange",
+    price: 1399,
+    MRP: 4000,
+    sizes: ["S", "M", "XL", "2XL","3XL"],
+    discount: 70,
+     rating: 4.2
+  },
+  {
+    id:209,
+    image: "https://m.media-amazon.com/images/I/51NjiMt2IqL._SY741_.jpg",
+    description: "Van Heusen Women Above The Knee Dress",
+    brand: "Van Heusen",
+    category: "Dresses",
+    colors: "Yellow, Maroon, Red, Blue",
+    price: 899,
+    MRP: 4000,
+    sizes: ["XS","S", "M", "L", "XL","free"],
+    discount: 78,
+    rating: 4.2
+  },
+];
+
+export const brandFocus =[
+  {
+    id:210,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/LP_379x550._CB542354411_.png"
+  },
+  {
+    id:211,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/The_Souled_Store379x550._CB542353800_.png"
+  },
+  {
+    id:212,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/Allen_Solly_379x550._CB542353800_.png"
+  },
+  {
+    id:213,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/Levis_379x550._CB542353800_.png"
+  },
+  {
+    id:214,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/USPolo_379x550._CB542353800_.png"
+  },
+  {
+    id:215,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/Pepe_Jeans__379x550._CB542355319_.png"
+  },
+  {
+    id:216,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/Symbol_Premium379x550._CB542353800_.png"
+  },
+  {
+    id:217,
+    img:"https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Brandsinfocus/adidsa_379x550._CB542354166_.png"
+  },
+]
+
+

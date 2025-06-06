@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
+import SellerCreateProduct from "../admin/SellerAccount/SellerCreateProduct";
+import { useSelector } from "react-redux";
 
 const Sell = () => {
 
 
   const [products, setProducts] = useState([]);
-
+const  {user}  = useSelector((state) => state.auth);
   useEffect(() => {
     axios.get('http://localhost:8000/api/sales/assigned-products')
       .then((res) => setProducts(res.data))
@@ -14,8 +16,15 @@ const Sell = () => {
   }, []);
   return (
     <div>
+      <p className="text-xl mt-2">
+  Want to sell?{" "}
+  <Link to="/register-seller" className="text-blue-600 hover:underline">
+    Register as a Seller
+  </Link>
+</p>
       {/* Top Banner Section */}
       <div className="flex flex-col lg:flex-row bg-gray-800 mt-4 mx-4 text-white p-6 lg:p-12 rounded-md">
+        
         <div className="flex-1 lg:mx-20 mt-8 lg:mt-20 space-y-4">
           <h2 className="text-xl lg:text-2xl font-semibold">Announced:</h2>
           <h1 className="text-3xl lg:text-6xl font-bold leading-tight">
@@ -189,6 +198,16 @@ const Sell = () => {
 </div>
 
     </div>
+      {user?.role === "seller" && (
+    <div>
+      
+           <SellerCreateProduct/>
+     
+    </div>
+  )}
+  
+
+   
     </div>
   );
 };

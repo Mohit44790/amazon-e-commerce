@@ -22,9 +22,10 @@ export const suparSaver = [
   price:"367",
   description:"Amazon Brand - Presto! Garbage Bags | Medium | 180 Count | 30 Bags X 6 Rolls | 19 X 21 Inches | For Dry & Wet Waste | Black",
   image:["https://m.media-amazon.com/images/I/71T2M3bz77L._SX679_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
+
 {
   id:2,
   name:"Presto",
@@ -33,7 +34,7 @@ export const suparSaver = [
   price:"367",
   description:"Amazon Brand - Presto! 2 Ply Kitchen Tissue Rolls | 360 Pulls | 60 Kitchen Towels X 6 Rolls | Soft And Highly Absorbent | 100% Natural Virgin Cellulose Fiber",
   image:["https://m.media-amazon.com/images/I/510e8O+ut5L._SX300_SY300_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 {
@@ -44,7 +45,7 @@ export const suparSaver = [
   price:"367",
   description:"Rozana Super Basmati Rice 5Kg| For Everyday Consumption| Cooked Grain Upto 13mm*| Naturally Aged",
   image:["https://m.media-amazon.com/images/I/61GXbTd0zrL._SX679_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 {
@@ -55,7 +56,7 @@ export const suparSaver = [
   price:"367",
   description:"Amazon Brand - Vedaka Whole Jeera (Cumin), 200g",
   image:["https://m.media-amazon.com/images/I/61GXbTd0zrL._SX679_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 {
@@ -66,7 +67,7 @@ export const suparSaver = [
   price:"367",
   description:"100% Chana Dal Fine Besan, Gram Flour, 1 Kg",
   image:["https://m.media-amazon.com/images/I/61XTBnVY8ML._SX679_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 {
@@ -77,7 +78,7 @@ export const suparSaver = [
   price:"367",
   description:"Atta with Multigrains, 5kg pack, The High Fibre Atta",
   image:["https://images-eu.ssl-images-amazon.com/images/I/71PWhguzXkL.AC_SL240_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 {
@@ -88,7 +89,7 @@ export const suparSaver = [
   price:"367",
   description:"Atta with Multigrains, 5kg pack, The High Fibre Atta",
   image:["https://images-eu.ssl-images-amazon.com/images/I/711bMUEX1NL.AC_SL240_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 {
@@ -99,7 +100,7 @@ export const suparSaver = [
   price:"367",
   description:"Atta with Multigrains, 5kg pack, The High Fibre Atta",
   image:["https://images-eu.ssl-images-amazon.com/images/I/91nZuaJTrnL.AC_SL240_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 {
@@ -110,7 +111,7 @@ export const suparSaver = [
   price:"367",
   description:"Ariel Liquid Detergent Front Load - 4L | Removes 7 day dried-in Stains in 1 wash inside Washing Machine | Now at Price of Powders | Amazing Fragrance | Protects Colours | Dissolves Faster",
   image:["https://images-eu.ssl-images-amazon.com/images/I/71UNNh4OYkL.AC_SL240_.jpg"],
-  ratting:"4.5"
+  rating:4.5
 
 },
 

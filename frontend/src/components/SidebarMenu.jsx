@@ -169,14 +169,14 @@ const menuData = [
       { label: "Women's Fasions",  submenu:[
         {category:"Women,s Clothing",items:[
           {label:"Clothing",path:"/clothing"},
-          {label:"Western Wear",path:"/western-Wear"},
-          {label:"Ethic Wear",path:"/ethic-Wear"},
+          {label:"Western Wear",path:"/women/western-wear"},
+          {label:"Ethic Wear",path:"/women/ethnic-wear"},
           {label:"Top Brands",path:"/women-topbrand"},
         ]},
         
           {category:"Accessories",items:[
             {label:"Watches",path:"/wfashion_watches"},
-            {label:"HandBags & Cluthes",path:"/t-Shirts"},
+            {label:"HandBags & Cluthes",path:"/w-handbages_cluthes"},
             {label:"Gold & Diamond Jewellery",path:"/wfashion_gold_jewellery"},
             {label:"Fashion & Sliver Jewellery",path:"/wfashion_silver_jewellery"},
             {label:"Wallets",path:"/wfashion_wallets"},

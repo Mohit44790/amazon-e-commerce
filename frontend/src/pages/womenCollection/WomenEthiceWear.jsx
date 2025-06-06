@@ -37,15 +37,15 @@ const WomenEthiceWear = () => {
           <h1 className='text-sm font-semibold mx-4'>Ethnic Wear</h1>
           <div className='text-sm mt-1 mx-6 space-y-1'>
             {[
-              { label: 'Blouses', path: '/blouses' },
-              { label: 'Bottom Wear', path: '/bottom-wear' },
-              { label: 'Chunnis & Dupattas', path: '/chunnis' },
-              { label: 'Dress Material', path: '/dress-materials' },
-              { label: 'Gowns', path: '/gowns' },
-              { label: 'Kurtas & Kurtis', path: '/kurtas' },
-              { label: 'Lehenga Cholis', path: '/lehenga' },
-              { label: 'Salwar Suits', path: '/salwar' },
-              { label: 'Sarees', path: '/sarees' },
+              { label: 'Blouses', path: '/women/ethnic-wear/blouses' },
+              { label: 'Bottom Wear', path: '/women/ethnic-wear/bottom-wear' },
+              { label: 'Chunnis & Dupattas', path: '/women/ethnic-wear/chunnis' },
+              { label: 'Dress Material', path: '/women/ethnic-wear/dress-materials' },
+              { label: 'Gowns', path: '/women/ethnic-wear/gowns' },
+              { label: 'Kurtas & Kurtis', path: '/women/ethnic-wear/kurtas' },
+              { label: 'Lehenga Cholis', path: '/women/ethnic-wear/lehenga' },
+              { label: 'Salwar Suits', path: '/women/ethnic-wear/salwar' },
+              { label: 'Sarees', path: '/women/ethnic-wear/sarees' },
             ].map((item, i) => (
               <Link to={item.path} key={i} className="block">
                 {item.label}

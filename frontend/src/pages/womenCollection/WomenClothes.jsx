@@ -1,21 +1,49 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import AmazonFasionNavbar from '../MensCollection/AmazonFashionNavbar';
-import { BestDresses, CELEBAPPROVED, ETHNICWEAR, INDIEBRAND, Mostcovered, TredingTops, westerwear, womenFashion } from '../../Data/AllTypesAcccessories';
+import { BestDresses, CELEBAPPROVED, ETHNICWEAR, INDIEBRAND, Mostcovered, MostLovedStyles, TredingTops, westerwear, womenFashion } from '../../Data/AllTypesAcccessories';
 import { useDispatch, useSelector } from 'react-redux';
 import { debounce } from "lodash";
 import { getFilteredProducts } from '../../redux/slice/productSlice';
 const WomenClothes = () => {
   // const scrollRef = useRef();
   const dispatch = useDispatch();
-
+const navigate = useNavigate()
   const fashionRef = useRef();
 const celebRef = useRef();
 const trendingRef = useRef();
 const dressesRef = useRef();
  const { items: products, loading, error } = useSelector((state) => state.products);
   const [selectedBrand, setSelectedBrand] = useState("All");
+  //offline category filter
+  // const [category, setCategory] = useState('All');
+
+  // const filteredItems =
+  //   category === 'All'
+  //     ? MostLovedStyles
+  //     : MostLovedStyles.filter(item => item.category === category);
+
+  // const categories = [ "kurta&Set", "tops&tees", "Saree", "Dresses", "activewears"];
+
+  const [category, setCategory] = useState('All');
+  const [color, setColor] = useState('All');
+
+  const categories = ["All", "kurta&Set", "tops&tees", "Saree", "Dresses", "activewears"];
+  const allColors = Array.from(
+    new Set(
+      MostLovedStyles.flatMap(item => item.colors.split(',').map(c => c.trim()))
+    )
+  );
+  const colors = ["All", ...allColors];
+
+  const filteredItems = MostLovedStyles.filter(item => {
+    const matchCategory = category === 'All' || item.category === category;
+    const matchColor = color === 'All' || item.colors.includes(color);
+    return matchCategory && matchColor;
+  });
+
+//online filter
   const [filters, setFilters] = useState({
     main: "",
     parent: "",
@@ -85,15 +113,21 @@ const dressesRef = useRef();
           </Link>
 
           <p className="text-sm font-semibold mb-2">Women</p>
-          <ul className="text-sm space-y-1 mb-4">
-            {[
-              'Ethnic Wear', 'Western Wear', 'Sportswear', 'Lingerie',
-              'Sleep & Lounge Wear', 'Accessories', 'Swim & Beachwear',
-              'Maternity', 'Sunglasses & Spectacle Frames', 'Lingerie & Nightwear'
-            ].map((item, i) => (
-              <Link to="#" key={i}><li className='hover:text-red-600'>{item}</li></Link>
-            ))}
-          </ul>
+<ul className="text-sm space-y-1 mb-4">
+  {[
+    'Ethnic Wear', 'Western Wear', 'Sportswear', 'Lingerie',
+    'Sleep & Lounge Wear', 'Accessories', 'Swim & Beachwear',
+    'Maternity', 'Sunglasses & Spectacle Frames', 'Lingerie & Nightwear', 'Overalls'
+  ].map((item, i) => {
+    const route = `/women/${item.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`;
+    return (
+      <li key={i}>
+        <Link to={route} className="hover:text-red-600">{item}</Link>
+      </li>
+    );
+  })}
+</ul>
+
 
           <div className="mb-4">
             <h1 className="font-bold text-sm mb-1">Amazon Prime</h1>
@@ -142,7 +176,7 @@ const dressesRef = useRef();
 
           <div className="mb-4">
             <h1 className="font-bold text-sm mb-1">Customer Reviews</h1>
-            <p>* * * * * & up</p>
+            <p><span className='text-yellow-500 text-2xl'>★★★★☆</span> & up</p>
           </div>
 
           <div className="mb-4">
@@ -219,7 +253,7 @@ const dressesRef = useRef();
           <div className="overflow-x-auto  no-scrollbar flex gap-4 py-4" ref={fashionRef}>
             {womenFashion.map((cat, index) => (
               <div key={index} className="text-center flex-shrink-0">
-                <img src={cat.img} alt={cat.label} className="w-28 h-28 sm:w-32 sm:h-32 mx-auto object-contain" />
+              <Link to={cat.path}> <img src={cat.img} alt={cat.label} className="w-28 h-28 sm:w-32 sm:h-32 mx-auto object-contain" /></Link> 
                 <p className="mt-2 text-sm">{cat.label}</p>
               </div>
             ))}
@@ -378,6 +412,85 @@ const dressesRef = useRef();
         </div>
           
         </div>
+
+        {/* MOst-Loved style  */}
+       
+        <div className='bg-white'>
+      <h1 className='text-2xl font-bold py-2 mx-6'>Most-Loved Styles</h1>
+        {/* Color Filter */}
+      <div className='space-x-2 px-6 mb-4'>
+        Color Select
+        {colors.map((col) => (
+          <button
+            key={col}
+            onClick={() => setColor(col)}
+            
+            className={`px-3 py-1 border rounded ${
+              color === col ? 'bg-red-500 text-white' : 'bg-gray-100'
+            }`}
+          >
+            {col}
+          </button>
+        ))}
+      </div>
+
+      <div className='space-x-2 px-6 mb-4'>
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setCategory(cat)}
+            className={`px-3 py-1 border rounded ${
+              category === cat ? 'bg-red-400 text-white' : 'bg-gray-100'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+          <div>
+            <div className='grid grid-cols-2'>
+              {filteredItems.map((items)=>(
+               <div key={items.id} onClick={() => navigate(`/offline-product/${items.id}`)} className="border shadow-sm overflow-hidden">
+                  <div className='bg-gradient-to-tr to-gray-300 via-white   from-gray-400 flex items-center justify-center'>
+                    <img src={items.image}  alt={items.name} className='mix-blend-darken cursor-pointer h-48' />
+                  </div>
+                  <div className="p-2">
+              <p className="font-medium text-sm mb-1">{items.brand}</p>
+              <p className="text-sm">{items.description.slice(0,70)}...</p>
+              <div className="flex items-center space-x-2 mb-1">
+                <p className="text-lg font-semibold text-black">₹{items.price}</p>
+                <p className="line-through text-gray-500 text-sm">₹{items.MRP}</p>
+                <p className="text-green-600 text-sm">{items.discount}% Off</p>
+                 
+                    
+              </div>
+              {/* Rating */}
+  <div className="flex items-center space-x-1 mb-1">
+    {Array.from({ length: 5 }).map((_, i) => {
+      const fullStar = i + 1 <= Math.floor(items.rating);
+      const halfStar = i + 1 > Math.floor(items.rating) && i < items.rating;
+      return <span key={i} className='text-yellow-500 text-2xl'>{fullStar ? '★' : halfStar ? '☆' : '⯨'}</span>;
+    })}
+    <span className="text-sm text-gray-500 ml-1">({items.rating.toFixed(1)})</span>
+  </div>
+              <p className="text-sm text-gray-700 mb-1">Select Color:</p>
+              <div className="flex flex-wrap gap-1">
+        {items.colors.split(',').map((color, index) => (
+          <div
+            key={index}
+            title={color.trim()}
+            className="w-4 h-4 rounded-full border border-gray-300"
+            style={{ backgroundColor: color.trim().toLowerCase() }}
+          ></div>
+        ))}
+      </div>
+                 </div>
+                </div>
+              ))}
+              
+            </div>
+          </div>
+        </div>
         
         {/* Product Display */}
                 {/* Product Display */}
@@ -390,15 +503,43 @@ const dressesRef = useRef();
     filteredProducts.map((product) => (
       <Link to={`/product/${product._id}`} key={product._id}>
         <div className="border p-2 bg-white  rounded hover:shadow-md transition duration-200">
-          <img
-            src={product?.images[0]}
-            alt={product.title}
-            className="h-80 w-full object-cover"
-          />
+          
+          <div className='bg-gradient-to-tr to-gray-300 via-white   from-gray-400 flex items-center justify-center'>
+                    <img src={product?.images[0]} alt={product.title} className='mix-blend-darken h-48' />
+                  </div>
           <h2 className="text-sm font-semibold mt-2">{product.title}</h2>
           <p className="text-xs text-gray-500">{product?.brand?.name}</p>
           <p className="text-sm font-bold text-red-600">₹{product.price}</p>
-          <p className="text-sm">{product.description?.substring(0, 35)}...</p>
+          <p className="text-sm">{product.description?.substring(0, 32)}...</p>
+         <div className="flex items-center gap-1 mt-1">
+          {/* color  */}
+  {Array.isArray(product.colors)
+    ? product.colors.map((color, idx) => (
+        <div
+          key={idx}
+          title={color}
+          className="w-4 h-4 rounded-full border"
+          style={{
+            backgroundColor: color,
+            borderColor: color === 'white' || color === '#ffffff' ? '#ccc' : color,
+          }}
+        ></div>
+      ))
+    : typeof product.colors === "string"
+    ? product.colors.split(",").map((color, idx) => (
+        <div
+          key={idx}
+          title={color.trim()}
+          className="w-4 h-4 rounded-full border"
+          style={{
+            backgroundColor: color.trim(),
+            borderColor: color.trim() === 'white' ? '#ccc' : color.trim(),
+          }}
+        ></div>
+      ))
+    : null}
+</div>
+
         </div>
       </Link>
     ))

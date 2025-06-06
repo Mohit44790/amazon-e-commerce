@@ -1,8 +1,9 @@
-import React, { use, useEffect, useRef } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { beauty, grocery, suparSaver } from "../Data/freshProducts";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchGroceries } from "../redux/slice/grocerySlice";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const categories = [
   "Fresh",
@@ -20,12 +21,33 @@ const categories = [
   "Baby Care",
 ];
 
+const freshbanner =[
+  "https://m.media-amazon.com/images/G/31/img24/Fresh/May/V3/SVD-header_PC_april_v1._SX1500_QL85_.jpg",
+  "https://m.media-amazon.com/images/G/31/img24/Fresh/May/V3/1500x300_mango_PC2._SX1500_QL85_.jpg",
+  "https://m.media-amazon.com/images/G/31/img24/Fresh/May/V3/PC_new_SF._SX1500_QL85_.jpg",
+  "https://m.media-amazon.com/images/G/31/img24/Fresh/May/V3/dairy-milkymist_PC._SX1500_QL85_.jpg",
+  "https://m.media-amazon.com/images/G/31/img24/Fresh/March/mmcoke_PCcopy._SX1500_QL85_.jpg",
+  "https://m.media-amazon.com/images/G/31/img24/Fresh/May/V3/SF-sliders_PC_1._SX1500_QL85_.jpg"
+]
+
 const Fresh = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const scrollRef = useRef();
   const {groceries} = useSelector((state) => state.grocery);
+const [currentIndex, setCurrentIndex] = useState(0);
 
+  const prevSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? freshbanner.length - 1 : prev - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === freshbanner.length - 1 ? 0 : prev + 1
+    );
+  };
 
   const handleScroll = (direction) => {
     const scrollAmount = 300;
@@ -65,6 +87,37 @@ const Fresh = () => {
         <img src="https://m.media-amazon.com/images/G/31/img24/Fresh/March/Stripes_PC_Flat300_sign-in_1.jpg" alt="stripe" className="w-full" />
       </div>
 
+      {/* banner  */}
+      <div className="relative w-full overflow-hidden ">
+       
+          <div  className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            {freshbanner.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt={`slide-${index}`}
+            className="w-full flex-shrink-0"
+          />
+        ))}
+          </div>
+           {/* Prev Button */}
+      <button
+        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-50 p-2 rounded-full"
+        onClick={prevSlide}
+      >
+        <IoIosArrowBack size={30} />
+      </button>
+
+      {/* Next Button */}
+      <button
+        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 text-white bg-black bg-opacity-50 p-2 rounded-full"
+        onClick={nextSlide}
+      >
+        <IoIosArrowForward size={30} />
+      </button>
+      
+      </div>
+
       <div className="bg-[#eef7cd] mx-4 mt-6 p-4 rounded-lg shadow">
         <img src="https://m.media-amazon.com/images/G/31/img18/Fresh/Mar25/Deal_zone_PC.jpg" alt="Deal Zone" className="w-full mb-2" />
         {/* Supersaver */}
@@ -89,7 +142,7 @@ const Fresh = () => {
             {suparSaver.map((item, id) => (
               <div
                 key={id}
-                onClick={() => navigate(`/product/${item.id}`)}
+                onClick={() => navigate(`/offline-product/${item.id}`)}
                 className="w-48 min-w-[200px] cursor-pointer bg-white rounded shadow hover:shadow-lg transition-all p-2 scroll-snap-align-start"
               >
                 <img src={item.image[0]} alt={item.name} className="w-full h-40 object-contain mb-2" />
@@ -133,7 +186,7 @@ const Fresh = () => {
             {suparSaver.map((item, id) => (
               <div
                 key={id}
-                onClick={() => navigate(`/product/${item.id}`)}
+                onClick={() => navigate(`/offline-product/${item.id}`)}
                 className="w-48 min-w-[200px] cursor-pointer bg-white rounded shadow hover:shadow-lg transition-all p-2 scroll-snap-align-start"
               >
                 <img src={item.image[0]} alt={item.name} className="w-full h-40 object-contain mb-2" />
@@ -178,7 +231,7 @@ const Fresh = () => {
             {suparSaver.map((item, id) => (
               <div
                 key={id}
-                onClick={() => navigate(`/product/${item.id}`)}
+                onClick={() => navigate(`/offline-product/${item.id}`)}
                 className="w-48 min-w-[200px] cursor-pointer bg-white rounded shadow hover:shadow-lg transition-all p-2 scroll-snap-align-start"
               >
                 <img src={item.image[0]} alt={item.name} className="w-full h-40 object-contain mb-2" />
@@ -211,7 +264,7 @@ const Fresh = () => {
   
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
     {grocery.map((item, id) => (
-      <div key={id} className="w-full mx-2">
+      <div key={id} onClick={() => navigate(`/offline-product/${item.id}`)} className="w-full mx-2">
         <img
           src={item.image}
           alt={`grocery-${id}`}

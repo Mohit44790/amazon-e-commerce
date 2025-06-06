@@ -10,7 +10,7 @@ const WomenWesternWear = () => {
       <AmazonFashionNavbar/>
 
 
-<div className='flex  mx-4 mt-2'>
+<div className="flex  flex-col  lg:flex-row">
 
       {/* left side  */}
       <div className="w-64 border-r  pr-4">
@@ -78,14 +78,26 @@ const WomenWesternWear = () => {
       </div>
 
       {/* right side */}
-      <div className='w-full bg-gray-200'>
-        <div className='flex flex-wrap gap-4 bg-white mx-4 '>
+      <div className='w-full  bg-gray-200'>
+        <div className='flex  gap-4 overflow-x-auto bg-white mx-4 '>
           {westernWear.map((item,index)=>(
         <Link to={ item.path} key={index} className=" items-center text-center text-sm mb-2">
-              <img src={item.image}  alt={item.label} className="w-32  mr-2" />
+              <img src={item.image}  alt={item.label} className="w-32   mr-2" />
               <span>{item.label}</span>
             </Link>
           ))}
+        </div>
+        {/* Brands in focus */}
+        <div className='mx-4'>
+          <h1>Brands in focus</h1>
+          <div className='flex gap-1'>
+          <Link to={"/forever21"}> <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/westunrec25/bif/UNRECF21_978x1419._SX564_QL85_FMpng_.png" alt="1" /></Link>
+           <Link to={"/madame"}>  <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/westunrec25/bif/unrecmadame_978x1419._SX564_QL85_FMpng_.png" alt="2" /></Link>
+           <Link to={"/globus"}>  <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/westunrec25/bif/unrecglobus_978x1419._SX564_QL85_FMpng_.png" alt="3" /></Link>
+           <Link to={"/the_souled_store"}>  <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/westunrec25/bif/unrecsouled_978x1419._SX564_QL85_FMpng_.png" alt="4" /></Link>
+           <Link to={"/levis"}>  <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/westunrec25/bif/unreclevis_978x1419._SX564_QL85_FMpng_.png" alt="5" /></Link>
+           <Link to={"/only"}>  <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/westunrec25/bif/unreconly_978x1419._SX564_QL85_FMpng_.png" alt="6" /></Link>
+          </div>
         </div>
       </div>
 </div>

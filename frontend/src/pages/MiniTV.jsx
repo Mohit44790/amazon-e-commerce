@@ -75,7 +75,7 @@ const MiniTV = () => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover rounded-md transform transition-transform duration-500 hover:rotateY-6 hover:scale-125 hover:shadow-xl"
+                  className="w-full h-full object-cover  rounded-md transform transition-transform duration-500 hover:rotateY-6 hover:scale-125 hover:shadow-xl"
                   style={{
                     transformStyle: 'preserve-3d',
                     backfaceVisibility: 'hidden',

@@ -18,6 +18,7 @@ const AdminLayout = () => {
     { label: 'Create Gift Card', path: `/admin/giftcards/create` },
     { label: 'Create Grocery', path: `/admin/grocery/create` },
     { label: 'Grocery List', path: `/admin/groceries` },
+    { label: 'Sale Items', path: `/admin/promotions` },
   ];
 
   return (

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { TiTick } from "react-icons/ti";
-import { allBrands, allCategories, colors, mockProducts } from '../Data/AllTypesAcccessories';
+import { allBrands, allCategories, colors, mockProducts, overallsFashion } from '../Data/AllTypesAcccessories';
 import { useNavigate } from 'react-router';
 import { IoIosArrowUp } from 'react-icons/io';
+import { womenKurtasKurtis, womenSuitSalwar } from '../Data/FashionData';
 
 const fashionTabs = [
     "Women",
@@ -76,7 +77,7 @@ const ClothingAnd_Accessories = () => {
  
 
   useEffect(() => {
-    let result = [...mockProducts];
+    let result = [...mockProducts,...overallsFashion,...womenKurtasKurtis,...womenSuitSalwar];
 
     if (selectedCategory && selectedCategory !== "ALL") {
       result = result.filter(item => item.category === selectedCategory);
@@ -93,7 +94,7 @@ const ClothingAnd_Accessories = () => {
   const displayedBrands = showMoreBrands ? allBrands : allBrands.slice(0, 5);
 
   const goToProductDetail = (id) => {
-    navigate(`/product/${id}`);
+    navigate(`/offline-product/${id}`);
   };
   return (
     <div className="w-full">
@@ -364,7 +365,7 @@ const ClothingAnd_Accessories = () => {
                 <h3 className="font-semibold">{product.title}</h3>
                 <p className="text-sm text-gray-500">{product.category}</p>
                 <p className="text-sm text-gray-600">Brand: {product.brand}</p>
-                <p className="text-sm text-gray-600" >color: {product.color}</p>
+                <p className="text-sm text-gray-600" >color: {product.colors}</p>
                 {selectedColor && (
     <div className="flex items-center gap-2 ">
       <span className="text-sm">Selected Color:</span>

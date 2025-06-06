@@ -96,6 +96,94 @@ export const createProduct = createAsyncThunk(
     }
   }
 );
+//seller
+export const SellercreateProduct = createAsyncThunk(
+  'products/create',
+  async (formData, { rejectWithValue, getState }) => {
+    try {
+      const token = getState().auth.token;
+
+      const res = await axios.post(
+        `${USER_API_END_POINT}/products/seller/create`,
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
+      );
+
+      return res.data.product;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
+
+export const fetchSellerProducts = createAsyncThunk(
+  'products/fetchSellerProducts',
+  async (_, { rejectWithValue, getState }) => {
+    try {
+      const token = getState().auth.token;
+      const res = await axios.get(`${USER_API_END_POINT}/products/seller/getproduct`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      return res.data.products;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  }
+);
+
+// Update a seller product
+export const updateSellerProduct = createAsyncThunk(
+  'products/updateSellerProduct',
+  async ({ id, formData }, { rejectWithValue, getState }) => {
+    try {
+      const token = getState().auth.token;
+      if (!token) return rejectWithValue('No token found');
+
+      const res = await axios.put(
+        `${USER_API_END_POINT}/seller/update/${id}`,
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
+      );
+
+      return res.data.product;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
+
+// Delete a seller product
+export const deleteSellerProduct = createAsyncThunk(
+  'products/deleteSellerProduct',
+  async (id, { rejectWithValue, getState }) => {
+    try {
+      const token = getState().auth.token;
+      if (!token) return rejectWithValue('No token found');
+
+      await axios.delete(`${USER_API_END_POINT}/seller/delete/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+        withCredentials: true,
+      });
+
+      return id;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || err.message);
+    }
+  }
+);
+
 
 
 
@@ -187,6 +275,18 @@ const productSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
+      .addCase(fetchSellerProducts.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchSellerProducts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = action.payload;
+      })
+      .addCase(fetchSellerProducts.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
       .addCase(getFilteredProducts.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -254,6 +354,35 @@ const productSlice = createSlice({
       .addCase(deleteProduct.fulfilled, (state, action) => {
         state.loading = false;
         state.items = state.items.filter((product) => product._id !== action.payload);
+      })
+      // Update seller product
+      .addCase(updateSellerProduct.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateSellerProduct.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = state.items.map(product =>
+          product._id === action.payload._id ? action.payload : product
+        );
+      })
+      .addCase(updateSellerProduct.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+
+      // Delete seller product
+      .addCase(deleteSellerProduct.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteSellerProduct.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = state.items.filter(product => product._id !== action.payload);
+      })
+      .addCase(deleteSellerProduct.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
       });
   },
 });

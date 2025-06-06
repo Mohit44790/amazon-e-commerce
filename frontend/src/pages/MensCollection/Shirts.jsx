@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import AmazonFashionNavbar from './AmazonFashionNavbar'
 import { Link } from 'react-router-dom'
-import { Menfashion } from '../../Data/AllTypesAcccessories'
+import { brandFocus, Menfashion } from '../../Data/AllTypesAcccessories'
 import { useDispatch, useSelector } from 'react-redux'
 import { getFilteredProducts } from '../../redux/slice/productSlice'
 import { debounce } from "lodash";
@@ -68,7 +68,7 @@ const Shirts = () => {
           <div className='px-6 text-sm'>
             <Link to="/t-shirts"><p>T-shirts, Polos & Shirts</p></Link>
             <Link to="/jeans"><p>Jeans</p></Link>
-            <Link to=""><p>Trousers</p></Link>
+            <Link to="/m-trousers"><p>Trousers</p></Link>
             <Link to=""><p>Shorts</p></Link>
             <Link to=""><p>Suits & Blazers</p></Link>
             <Link to=""><p>Sportswear</p></Link>
@@ -100,6 +100,51 @@ const Shirts = () => {
               ))}
             </div>
           </div>
+          <div className="mb-4">
+            <h1 className="font-bold text-sm mb-1">Sizes</h1>
+            <div className="grid grid-cols-4 gap-2 text-xs">
+              {['5XS', '2XS', 'XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL', '6XL', '7XL', '8XL', '9XL', 'Free'].map((size) => (
+                <button
+                  key={size}
+                  name="sizes"
+                  value={size}
+                  onClick={handleChange}
+                  className="border border-black text-xs rounded-lg text-center py-1"
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+          </div>
+          {/* colors  */}
+        <div className="mb-4">
+  <h1 className="font-bold text-sm mb-1">Color</h1>
+  <div className="grid grid-cols-4 gap-2">
+    {[
+      'Red', 'Blue', 'Green', 'Lime', 'Magenta', 'White', 'Gray',
+      'Yellow', 'Pink', 'Orange', 'Silver', 'Purple', 'Brown', 'Black'
+    ].map((color) => (
+      <button
+        key={color}
+        name="colors"
+        value={color}
+        onClick={(e) => {
+          e.preventDefault();
+          setFilters((prev) => ({
+            ...prev,
+            colors: color === filters.colors ? '' : color, // toggle color filter
+          }));
+        }}
+        className={`w-6 h-6 rounded-full border ${
+          filters.colors === color ? 'ring-2 ring-black' : ''
+        }`}
+        style={{ backgroundColor: color }}
+        title={color.charAt(0).toUpperCase() + color.slice(1)} // optional: hover tooltip
+      />
+    ))}
+  </div>
+</div>
+
         </div>
 
         {/* Right side */}
@@ -140,6 +185,13 @@ const Shirts = () => {
           {/* Brand Focus */}
           <div>
             <img src="https://m.media-amazon.com/images/G/31/img21/MA2024/AW24FLIP/Shop_by_category_PC._CB542139003_.jpg" alt="brand" />
+            <div className='flex overflow-x-auto   scrollbar-hide gap-2'>
+              {brandFocus.map((items,index)=>(
+                <div key={index} className=' '>
+                  <img src={items.img} alt="" className='w-56'/>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Break Out Brand */}
@@ -149,7 +201,7 @@ const Shirts = () => {
 
           {/* Brand Offers */}
           <div className='py-3 bg-[#ffe8a5]'>
-            <div className='flex md:w-44 sm:w-28 w-16 mx-4 gap-1'>
+              <div className="flex overflow-x-auto gap-3 px-4  scrollbar-hide">
               <img src="https://m.media-amazon.com/images/G/31/MA2025/MAYART/SD/BrandOffers/UCB_320x200._CB796770646_.png" alt="1" />
               <img src="https://m.media-amazon.com/images/G/31/MA2025/MAYART/SD/BrandOffers/Nobero_320x200._CB796770646_.png" alt="2" />
               <img src="https://m.media-amazon.com/images/G/31/MA2025/MAYART/TPP_320x200._CB795268706_.png" alt="3" />
@@ -188,6 +240,31 @@ const Shirts = () => {
           <p className="text-xs text-gray-500">{product?.brand?.name}</p>
           <p className="text-sm font-bold">₹{product.price}</p>
           <p className="text-sm">{product.description?.substring(0, 35)}...</p>
+           {Array.isArray(product.colors)
+    ? product.colors.map((color, idx) => (
+        <div
+          key={idx}
+          title={color}
+          className="w-4 h-4 rounded-full border r"
+          style={{
+            backgroundColor: color,
+            borderColor: color === 'white' || color === '#ffffff' ? '#ccc' : color,
+          }}
+        ></div>
+      ))
+    : typeof product.colors === "string"
+    ? product.colors.split(",").map((color, idx) => (
+        <div
+          key={idx}
+          title={color.trim()}
+          className="w-4 h-4 rounded-full border "
+          style={{
+            backgroundColor: color.trim(),
+            borderColor: color.trim() === 'white' ? '#ccc' : color.trim(),
+          }}
+        ></div>
+      ))
+    : null}
         </div>
       </Link>
     ))

@@ -20,7 +20,7 @@ const AdminDashboard = () => {
 
   // Optional targets to calculate percentage
   const targetSales = 1000000; // For example
-  const targetUsers = 500;
+  const targetUsers = 250;
   const targetProducts = 500;
 
   useEffect(() => {

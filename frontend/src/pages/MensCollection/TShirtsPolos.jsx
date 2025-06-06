@@ -218,6 +218,36 @@ const TShirtsPolos = () => {
                   <p className="text-xs text-gray-500">{product?.brand?.name}</p>
                   <p className="text-sm font-bold">₹{product.price}</p>
                   <p className="text-sm ">{product.description?.substring(0,35)}...</p>
+                  <div className="flex items-center gap-1 mt-1">
+
+                    {/* //color showing  */}
+  {Array.isArray(product.colors)
+    ? product.colors.map((color, idx) => (
+        <div
+          key={idx}
+          title={color}
+          className="w-4 h-4 rounded-full border"
+          style={{
+            backgroundColor: color,
+            borderColor: color === 'white' || color === '#ffffff' ? '#ccc' : color,
+          }}
+        ></div>
+      ))
+    : typeof product.colors === "string"
+    ? product.colors.split(",").map((color, idx) => (
+        <div
+          key={idx}
+          title={color.trim()}
+          className="w-4 h-4 rounded-full border"
+          style={{
+            backgroundColor: color.trim(),
+            borderColor: color.trim() === 'white' ? '#ccc' : color.trim(),
+          }}
+        ></div>
+      ))
+    : null}
+</div>
+
                  
                 </div></Link> 
               ))

@@ -1,6 +1,6 @@
 export const products = [
   {
-    id: 11,
+    _id: 11,
     name: "Cotton Bedsheet",
     brand: "HomeComfort",
     category: "Home Essentials",
@@ -8,7 +8,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/71ohuBtgUQL._AC_SY200_.jpg"]
   },
   {
-    id: 12,
+    _id: 12,
     name: "Steel Water Bottle",
     brand: "HydroMax",
     category: "Home Essentials",
@@ -16,7 +16,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/517z9sh8PeL._AC_SY200_.jpg"]
   },
   {
-    id: 13,
+    _id: 13,
     name: "Wall Clock",
     brand: "TickTock",
     category: "Home Essentials",
@@ -24,7 +24,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/61lN4w0+MvL._AC_SY200_.jpg"]
   },
   {
-    id: 14,
+    _id: 14,
     name: "Storage Organizer",
     brand: "SmartStore",
     category: "Home Essentials",
@@ -32,7 +32,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/61eZzzdIGQL._AC_SY200_.jpg"]
   },
   {
-    id: 15,
+    _id: 15,
     name: "Ceramic Mug Set",
     brand: "CaféStyle",
     category: "Home Essentials",
@@ -40,7 +40,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/61XOsIfWIyL._AC_SY200_.jpg"]
   },
   {
-    id: 16,
+    _id: 16,
     name: "Yoga Mat",
     brand: "FitFlex",
     category: "Home Essentials",
@@ -48,7 +48,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/8151vZesS2L._AC_SY200_.jpg"]
   },
   {
-    id: 17,
+    _id: 17,
     name: "LED Night Light",
     brand: "GlowNest",
     category: "Home Essentials",
@@ -56,7 +56,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/61dWc2MW0SL._AC_SY200_.jpg"]
   },
   {
-    id: 18,
+    _id: 18,
     name: "Hanger Set",
     brand: "Organix",
     category: "Home Essentials",
@@ -64,7 +64,7 @@ export const products = [
     image: ["https://m.media-amazon.com/images/I/61fCB7qa29L._AC_SY200_.jpg"]
   },
   {
-    id: 19,
+    _id: 19,
     name: "Plastic Drawer",
     brand: "StoreEase",
     category: "Home Essentials",
@@ -76,7 +76,7 @@ export const products = [
 
   export const electronicsItems = [
     {
-      id: 21,
+      _id: 21,
       name: "Bluetooth Headphones",
       brand: "SoundMagic",
       category: "Electronics",
@@ -84,7 +84,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51aXvjzcukL._AC_SY200_.jpg"]
     },
     {
-      id: 22,
+      _id: 22,
       name: "Gaming Mouse",
       brand: "RedGear",
       category: "Electronics",
@@ -92,7 +92,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51tg7gKktrL._AC_SY200_.jpg"]
     },
     {
-      id: 23,
+      _id: 23,
       name: "Gaming Mouse",
       brand: "RedGear",
       category: "Electronics",
@@ -100,7 +100,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51tg7gKktrL._AC_SY200_.jpg"]
     },
     {
-      id: 24,
+      _id: 24,
       name: "Smartphone Stand",
       brand: "EaseTech",
       category: "Electronics",
@@ -108,7 +108,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/719BhRdrQbL._AC_SY200_.jpg"]
     },
     {
-      id: 25,
+      _id: 25,
       name: "Power Bank",
       brand: "ChargeX",
       category: "Electronics",
@@ -116,7 +116,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51AACiqfOdL._AC_SY200_.jpg"]
     },
     {
-      id: 26,
+      _id: 26,
       name: "Laptop Sleeve",
       brand: "SafeGuard",
       category: "Electronics",
@@ -124,7 +124,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61c3+AAop3L._AC_SY200_.jpg"]
     },
     {
-      id: 27,
+      _id: 27,
       name: "Wireless Keyboard",
       brand: "KeyLink",
       category: "Electronics",
@@ -132,7 +132,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/81S90p2oWBL._AC_SY200_.jpg"]
     },
     {
-      id: 28,
+      _id: 28,
       name: "Webcam HD",
       brand: "CamView",
       category: "Electronics",
@@ -140,7 +140,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61oqO1AMbdL._AC_SY200_.jpg"]
     },
     {
-      id: 29,
+      _id: 29,
       name: "USB Hub",
       brand: "Portify",
       category: "Electronics",
@@ -148,7 +148,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51h7CQTRJ1L._AC_SY200_.jpg"]
     },
     {
-      id: 30,
+      _id: 30,
       name: "Wireless Earbuds",
       brand: "BeatSync",
       category: "Electronics",
@@ -156,7 +156,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/610DB8Cwm7L._AC_SY200_.jpg"]
     },
     {
-      id: 31,
+      _id: 31,
       name: "Bluetooth Speaker",
       brand: "BoomBox",
       category: "Electronics",
@@ -164,7 +164,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/71sLOtsK2UL._AC_SY200_.jpg"]
     },
     {
-      id: 32,
+      _id: 32,
       name: "Smart LED Bulb",
       brand: "BrightTech",
       category: "Electronics",
@@ -172,7 +172,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61fWtNDBzaL._AC_SY200_.jpg"]
     },
     {
-      id: 33,
+      _id: 33,
       name: "Fitness Tracker",
       brand: "FitZone",
       category: "Electronics",
@@ -184,11 +184,11 @@ export const products = [
 
   export const electronics = [
     {
-      id: 1,
+      _id: 1,
       brand: "Gaming Mouse",
       price: 399,
       description:
-        "EvoFox Starter Series Spectre USB Wired Gaming Mouse with Upto 3600 DPI Gaming Sensor | 6 Buttons Design | Upto 7 Million Clicks | 7 Colours Rainbow Lighting with Breathing Effect | 1.5m Braided Cable (Black)",
+        "EvoFox Starter Series Spectre USB Wired Gaming Mouse with Upto 3600 DPI Gaming Sensor | 6 Buttons Design | Upto 7 Million Clicks | 7 Colours Rainbow Lighting with Breathing Effect | 1.5m Bra_ided Cable (Black)",
       mrp: 999,
       discount: 60,
       rating: 4.3,
@@ -202,7 +202,7 @@ export const products = [
       ],
     },
     {
-      id: 2,
+      _id: 2,
       brand: "Keep shopping for",
       price: 399,
       description:
@@ -220,7 +220,7 @@ export const products = [
       ],
     },
     {
-      id: 3,
+      _id: 3,
       brand: "Wireless Keyboard",
       price: 899,
       description:
@@ -238,7 +238,7 @@ export const products = [
       ],
     },
     {
-      id: 4,
+      _id: 4,
       brand: "onples",
       price: 1899,
       description:
@@ -256,7 +256,7 @@ export const products = [
       ],
     },
     {
-      id: 5,
+      _id: 5,
       brand: "oneples",
       price: 1899,
       description:
@@ -277,7 +277,7 @@ export const products = [
   export const allProducts = [
     // From `products` array
     {
-      id: 101,
+      _id: 101,
       brand: "Premium Detergent",
       price: 299,
       mrp: 499,
@@ -289,7 +289,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/71ohuBtgUQL._AC_SY200_.jpg"],
     },
     {
-      id: 102,
+      _id: 102,
       brand: "Snack Delight",
       price: 99,
       mrp: 149,
@@ -301,7 +301,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/517z9sh8PeL._AC_SY200_.jpg"],
     },
     {
-      id: 103,
+      _id: 103,
       brand: "Hair Oil Natural",
       price: 199,
       mrp: 299,
@@ -313,7 +313,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61lN4w0+MvL._AC_SY200_.jpg"],
     },
     {
-      id: 104,
+      _id: 104,
       brand: "Health Drink",
       price: 149,
       mrp: 249,
@@ -325,7 +325,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61eZzzdIGQL._AC_SY200_.jpg"],
     },
     {
-      id: 105,
+      _id: 105,
       brand: "Shampoo Herbal",
       price: 169,
       mrp: 229,
@@ -337,7 +337,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61XOsIfWIyL._AC_SY200_.jpg"],
     },
     {
-      id: 106,
+      _id: 106,
       brand: "Toothpaste Mint",
       price: 89,
       mrp: 119,
@@ -349,7 +349,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/8151vZesS2L._AC_SY200_.jpg"],
     },
     {
-      id: 107,
+      _id: 107,
       brand: "Cleaning Spray",
       price: 149,
       mrp: 199,
@@ -361,7 +361,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61dWc2MW0SL._AC_SY200_.jpg"],
     },
     {
-      id: 108,
+      _id: 108,
       brand: "Instant Coffee",
       price: 349,
       mrp: 499,
@@ -373,7 +373,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61fCB7qa29L._AC_SY200_.jpg"],
     },
     {
-      id: 109,
+      _id: 109,
       brand: "Protein Bar",
       price: 199,
       mrp: 299,
@@ -387,7 +387,7 @@ export const products = [
   
     // From `electronicsItems` array
     {
-      id: 201,
+      _id: 201,
       brand: "Gaming Headphones",
       price: 1499,
       mrp: 1999,
@@ -399,7 +399,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51aXvjzcukL._AC_SY200_.jpg"],
     },
     {
-      id: 202,
+      _id: 202,
       brand: "Bluetooth Speaker",
       price: 799,
       mrp: 1299,
@@ -411,7 +411,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51tg7gKktrL._AC_SY200_.jpg"],
     },
     {
-      id: 203,
+      _id: 203,
       brand: "Smart Watch",
       price: 1999,
       mrp: 3499,
@@ -423,7 +423,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/719BhRdrQbL._AC_SY200_.jpg"],
     },
     {
-      id: 204,
+      _id: 204,
       brand: "USB Cable",
       price: 199,
       mrp: 299,
@@ -435,7 +435,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/51AACiqfOdL._AC_SY200_.jpg"],
     },
     {
-      id: 205,
+      _id: 205,
       brand: "Wireless Earbuds",
       price: 1499,
       mrp: 2499,
@@ -447,7 +447,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61c3+AAop3L._AC_SY200_.jpg"],
     },
     {
-      id: 206,
+      _id: 206,
       brand: "Action Camera",
       price: 2999,
       mrp: 4499,
@@ -459,7 +459,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/81S90p2oWBL._AC_SY200_.jpg"],
     },
     {
-      id: 207,
+      _id: 207,
       brand: "Laptop Stand",
       price: 499,
       mrp: 799,
@@ -471,7 +471,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61oqO1AMbdL._AC_SY200_.jpg"],
     },
     {
-      id: 208,
+      _id: 208,
       brand: "HD Webcam",
       price: 899,
       mrp: 1299,
@@ -479,11 +479,11 @@ export const products = [
       rating: 4.0,
       reviews: 70,
       category: "electronics",
-      description: "Clear video for meetings, streaming, and calls.",
+      description: "Clear v_ideo for meetings, streaming, and calls.",
       image: ["https://m.media-amazon.com/images/I/51h7CQTRJ1L._AC_SY200_.jpg"],
     },
     {
-      id: 209,
+      _id: 209,
       brand: "Phone Holder",
       price: 299,
       mrp: 499,
@@ -495,7 +495,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/610DB8Cwm7L._AC_SY200_.jpg"],
     },
     {
-      id: 210,
+      _id: 210,
       brand: "LED Strip Light",
       price: 399,
       mrp: 699,
@@ -507,7 +507,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/71sLOtsK2UL._AC_SY200_.jpg"],
     },
     {
-      id: 211,
+      _id: 211,
       brand: "Power Bank",
       price: 1099,
       mrp: 1799,
@@ -519,7 +519,7 @@ export const products = [
       image: ["https://m.media-amazon.com/images/I/61fWtNDBzaL._AC_SY200_.jpg"],
     },
     {
-      id: 212,
+      _id: 212,
       brand: "Mini Projector",
       price: 3999,
       mrp: 5999,

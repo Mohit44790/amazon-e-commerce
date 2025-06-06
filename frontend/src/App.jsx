@@ -73,6 +73,22 @@ import WomenWatches from "./pages/womenCollection/Accessories/WomenWatches"
 import WristWatches from "./pages/womenCollection/Accessories/WristWatches"
 import Electronics from "./pages/Electronics/Electronics"
 import Amazonpay from "./pages/Amazonpay"
+import HandBagsCluthes from "./pages/womenCollection/Accessories/HandBagsCluthes"
+import SilverJewellery from "./pages/womenCollection/Accessories/SilverJewellery"
+import SellerRegister from "./pages/SellerRegister"
+import WomenOveralls from "./pages/womenCollection/WomenOveralls"
+import SellerDashboard from "./admin/SellerAccount/SellerDashboard"
+import SellerProductsPage from "./admin/SellerAccount/SellerProductsPage"
+import SellerProductEditPage from "./admin/SellerAccount/SellerProductEditPage"
+import SellerCreateProduct from "./admin/SellerAccount/SellerCreateProduct"
+import MenTrousers from "./pages/MensCollection/MenTrousers"
+import OfflineProductDetails from "./components/OfflineProductDetails"
+import KurtasKurtis from "./pages/womenCollection/AllWomenCollection/KurtasKurtis"
+import SalwarSuits from "./pages/womenCollection/AllWomenCollection/SalwarSuits"
+import EthicsBottomWear from "./pages/womenCollection/AllWomenCollection/EthicsBottomWear"
+import LehengaCholis from "./pages/womenCollection/AllWomenCollection/LehengaCholis"
+import Accessories from "./pages/Electronics/Accessories"
+import HomeTheater from "./pages/Electronics/HomeTheater"
 
 
 
@@ -88,12 +104,15 @@ function App() {
       children:[
         {path: "/", element:<Home/>},
         { path:"/product/:id", element:<ProductDetail />},
+        { path:"/offline-product/:id", element:<OfflineProductDetails />},
         { path:"/offer-product/:id", element:<OfferProductCard />},
         { path:"/mens-clothes", element:<MensClothing />},
-        // mobile
+        // mobile accessories
         { path:"/mobiles/allmobiles", element:<Mobiles />},
         { path:"/allmobiles/allaccessories", element:<AllMobilesAccessories />},
         { path:"/amazonpay", element:<Amazonpay />},
+        { path:"/accessories", element:<Accessories />},
+        { path:"/home_theater_TV_Video", element:<HomeTheater />},
         
         { path:"/mobiles/smartphones", element:<SmartphonesPage />},
         { path:"/bestsellers", element:<BestSellers />},
@@ -133,14 +152,22 @@ function App() {
             { path: "/jewellery", element: <Jewellery />}, 
             { path: "/wallets", element: <Wallets />}, 
             { path: "/shoes", element: <Shoes />}, 
+            { path: "/m-trousers", element: <MenTrousers />}, 
             // women 
         { path:"/clothing", element:<WomenClothes />},
 
             { path: "/women-topbrand", element: <WomenTopBrands />}, 
-            { path: "/western-Wear", element: <WomenWesternWear />}, 
-            { path: "/ethic-Wear", element: <WomenEthiceWear />}, 
+            { path: "/women/western-Wear", element: <WomenWesternWear />}, 
+            { path: "/women/ethnic-wear", element: <WomenEthiceWear />}, 
             { path: "/wfashion_watches", element: <WomenWatches />}, 
             { path: "/wrist-watches", element: <WristWatches />}, 
+            { path: "/w-handbages_cluthes", element: <HandBagsCluthes />}, 
+            { path: "/wfashion_silver_jewellery", element: <SilverJewellery />}, 
+            { path: "/women/overalls", element: <WomenOveralls />}, 
+            { path: "/women/ethnic-wear/kurtas", element: <KurtasKurtis />}, 
+            { path: "/women/ethnic-wear/salwar", element: <SalwarSuits />}, 
+            { path: "/women/ethnic-wear/bottom-wear", element: <EthicsBottomWear />}, 
+            { path: "/women/ethnic-wear/lehenga", element: <LehengaCholis />}, 
 
        
       ]
@@ -150,7 +177,14 @@ function App() {
     {path: "/delivery-status/:id", element: <OrderSuccess /> },
     {path:"/signin",element:<SignIn/>},
     {path:"/signup",element:<SignUp/>},
+    {path:"/register-seller" ,element:<SellerRegister />},
     { path:"/miniTV", element:<MiniTV/>},
+
+    // seller 
+     { path: "/seller/products/create", element: <SellerCreateProduct /> },
+     { path: "/seller/dashboard", element: <SellerDashboard /> },
+     { path: "/seller/products-list", element: <SellerProductsPage /> },
+     {path:"/seller/products/edit/:id", element:<SellerProductEditPage />},
 
     {path:"/admin", element:<AdminLayout />,
       children:[

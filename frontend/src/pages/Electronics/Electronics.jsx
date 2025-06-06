@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import MegaMenuelectronics from './MegaMenuelectronics';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,8 @@ import {
   categoryslide2,
   categoryslide3
 } from '../../Data/AllTypesAcccessories';
+import { trendingAudio } from '../../Data/ElectronicData';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 const bankBanner = [
   "https://m.media-amazon.com/images/G/31/img24hp/g/hh/IDFC-Bank_1242._CB795752984_.jpg",
@@ -43,7 +45,16 @@ const Skeleton = () => (
 
 const Electronics = () => {
   const [loading, setLoading] = useState(true);
+const scrollRef = useRef(null);
 
+const scroll = (direction) => {
+    const { current } = scrollRef;
+    if (current) {
+      const scrollAmount = direction === 'left' ? -300 : 300;
+      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+  //skeleton loading
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
@@ -157,6 +168,47 @@ const Electronics = () => {
               )}
             </div>
           </div>
+           <section className="relative my-2">
+      <div className="px-4 bg-white">
+        <h1 className="text-xl font-semibold mb-4">New & trending: Audio</h1>
+
+        {/* Scroll buttons */}
+        <button
+          onClick={() => scroll('left')}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-70 p-3 py-10 mx-2 hidden md:block"
+        >
+          <IoIosArrowBack size={24} />
+        </button>
+
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto   space-x-4 scroll-smooth"
+        >
+          {trendingAudio.map((audio, index) => (
+            <div
+              key={index}
+              className="w-80 flex-shrink-0"
+            >
+              <Link to={audio.path}>
+                <img
+                  src={audio.image}
+                  alt="audio"
+                  className="w-full h-80 object-contain "
+                />
+              </Link>
+            
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={() => scroll('right')}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white  p-3 py-10 mx-2 hidden md:block"
+        >
+          <IoIosArrowForward size={24} />
+        </button>
+      </div>
+    </section>
         </main>
       </div>
     </div>

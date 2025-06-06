@@ -88,17 +88,17 @@ const AmazonFashionNavbar = () => {
   return (
     <div className="relative z-40">
       {/* Top Bar */}
-      <div className="flex flex-wrap justify-between items-center text-sm py-3 border-b px-4 md:px-6 bg-white ">
-        <h1 className="text-xl md:text-2xl  font-semibold mb-2 md:mb-0">Amazon Fashion</h1>
+      <div className="flex flex-wrap justify-between items-center text-sm py-2 border-b px-4 md:px-6 bg-white ">
+        <h1 className="text-xl md:text-1xl text-center justify-center font-bold mb-2 md:mb-0">Amazon Fashion</h1>
         {/* <div className="flex flex-wrap gap-4 md:gap-6"> */}
           {fashionTabs.map((tab) => (
             <div
               key={tab}
-              className="relative group cursor-pointer pb-1"
+              className="relative group justify-center text  cursor-pointer pb-1"
               onMouseEnter={() => setHoveredTab(tab)}
               onMouseLeave={() => setHoveredTab(null)}
             >
-              <p className={`pb-1 ${hoveredTab === tab ? "border-b-2 border-black" : ""}`}>
+              <p className={`pb-0 text-xs ${hoveredTab === tab ? "border-b-2 border-black" : ""}`}>
                 {tab}
               </p>
               {hoveredTab === tab && (
@@ -116,7 +116,7 @@ const AmazonFashionNavbar = () => {
         <div
           onMouseEnter={() => setHoveredTab(hoveredTab)}
           onMouseLeave={() => setHoveredTab(null)}
-          className="absolute left-0 w-full bg-white shadow-lg border-t px-4 md:px-10 py-6"
+          className="absolute left-0 w-full bg-white shadow-lg  border-t px-4 md:px-10 py-6"
         >
           <div className="grid grid-cols-6 gap-6">
             {(() => {

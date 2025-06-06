@@ -60,21 +60,23 @@ const AdminUserList = () => {
     }
   };
 
-  const handleRoleChange = async (id, currentRole) => {
-    try {
-      const newRole = currentRole === 'admin' ? 'user' : 'admin';
-
-      await axios.put(`http://localhost:8000/api/user/admin/update-role/${id}`, { role: newRole }, {
+  const handleRoleChange = async (id, newRole) => {
+  try {
+    await axios.put(
+      `http://localhost:8000/api/user/admin/update-role/${id}`,
+      { role: newRole },
+      {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
-      });
+      }
+    );
+    toast.success(`Role updated to ${newRole}`);
+    fetchUsers();
+  } catch (error) {
+    toast.error(error.response?.data?.message || 'Failed to update role');
+  }
+};
 
-      toast.success(`Role updated to ${newRole}`);
-      fetchUsers();
-    } catch (error) {
-      toast.error(error.response?.data?.message || 'Failed to update role');
-    }
-  };
 
   return (
     <div className="bg-white rounded-lg shadow p-6">
@@ -109,19 +111,32 @@ const AdminUserList = () => {
                     Delete
                   </button>
                   <button
-                    onClick={() => handleBlockToggle(user._id, user.isBlocked)}
-                    className={`${
-                      user.isBlocked ? 'bg-green-600' : 'bg-yellow-500'
-                    } text-white px-3 py-1 rounded hover:opacity-90 text-sm`}
-                  >
-                    {user.isBlocked ? 'Unblock' : 'Block'}
-                  </button>
-                  <button
-                    onClick={() => handleRoleChange(user._id, user.role)}
-                    className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm"
-                  >
-                    {user.role === 'admin' ? 'Make User' : 'Make Admin'}
-                  </button>
+    onClick={() => handleBlockToggle(user._id, user.isBlocked)}
+    className={`${
+      user.isBlocked ? 'bg-green-600' : 'bg-yellow-500'
+    } text-white px-3 py-1 rounded hover:opacity-90 text-sm`}
+  >
+    {user.isBlocked ? 'Unblock' : 'Block'}
+  </button>
+                   {/* Admin/User Toggle */}
+  <button
+    onClick={() =>
+      handleRoleChange(user._id, user.role === 'admin' ? 'user' : 'admin')
+    }
+    className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 text-sm"
+  >
+    {user.role === 'admin' ? 'Make User' : 'Make Admin'}
+  </button>
+
+  {/* Seller Toggle */}
+  <button
+    onClick={() =>
+      handleRoleChange(user._id, user.role === 'seller' ? 'user' : 'seller')
+    }
+    className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 text-sm"
+  >
+    {user.role === 'seller' ? 'Remove Seller' : 'Make Seller'}
+  </button>
                 </td>
               </tr>
             ))

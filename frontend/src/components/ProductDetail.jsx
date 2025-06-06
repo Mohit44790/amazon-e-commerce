@@ -71,6 +71,7 @@ const ProductDetail = () => {
   const { user } = useSelector((state) => state.auth);
 
   const [selectedImage, setSelectedImage] = useState(null);
+  
 //  const [loading, setLoading] = useState(true);
 
 //   useEffect(() => {
@@ -219,8 +220,19 @@ const ProductDetail = () => {
           <div className="border p-4 w-72 rounded-md shadow space-y-2 text-sm">
             <p className="text-xl font-bold">₹{product.price}</p>
             <p className="text-green-600 font-semibold">Fulfilled</p>
-            <p>FREE delivery Friday, 18 April on your first order.</p>
-            <p>Or fastest delivery Tomorrow, 17 April.</p>
+            <p>FREE delivery,  {new Date(Date.now() ).toLocaleDateString('en-IN', {
+               weekday: "long",
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  })} on your first order.</p>
+          <p>
+  Or fastest delivery Tomorrow, {new Date(Date.now() + 86400000 ).toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  })}
+</p>
             <p>
               Delivering to Delhi 110001 –{' '}
               <span className="text-blue-500 cursor-pointer">Update location</span>
@@ -256,7 +268,7 @@ const ProductDetail = () => {
           New (2) from ₹{product.price} &nbsp; FREE Delivery on first order.
         </div>
       </div>
-      <div className='mx-4'>
+      <div className='mx-4 w-96'>
       <ProductReviews productId={product._id} />
 
       </div>
